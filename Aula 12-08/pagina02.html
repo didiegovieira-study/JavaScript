@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERPOLAÇÃO e Concatenação</title>
+</head>
+<body>
+    
+    Registro de fruta <br><br>
+
+    Nome: <input type="text" id="in_fruta"> <br>
+    Preço: <input type="text" id="in_preco"> <br>
+    <br>
+    <button onclick="registrar()">Registrar</button>
+
+    
+
+</body>
+</html>
+
+<script>
+/*
+Aqui usamos uma técnica chamada INTERPOLAÇÃO
+Nela, "juntamos" trechos estáticos com dinâmicos
+IMPORTANTE: para que ela funcione é preciso que o
+conteúdo esteja em CRASES ``.
+
+As parte dinamicas chamamos de expressoes
+elas ficam entre ${ e }
+Numa expressão pode ter QUALQUER código JS
+*/ 
+   function registrar() {
+        alert(`A fruta ${in_fruta.value} custa ${in_preco.value}`)
+        
+    }
+// dois modos de fazer
+    function registrar2() {
+        alert('A fruta '+in_fruta.value+' custa '+in_preco.value)
+    }
+
+
+</script>

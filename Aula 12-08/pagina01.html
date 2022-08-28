@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <br>
+    Diga qual linha de onibus irá pegar e o tempo do trajeto
+    <br>
+    Linha : <input id="in_linha">
+    <br>
+    Tempo : <input type="time" id="in_tempo">
+    <br>
+    <button onclick="Viagem()">Registrar Viagem</button>
+    
+</body>
+</html>
+
+<!--
+    Nos "ID" devemos evitar caracteres especiais acentos, cedilha, hifen
+    E Nao devemos usa espaço em branco.
+    ao inves devemos usar "_"
+    ex: in_data_nascimento
+-->
+
+<script>
+
+    function Viagem() {
+        alert('Registrando sua linha de ônibus:')
+        alert(in_linha.value)
+        alert('Registrando o tempo de viagem:')
+        alert(in_tempo.value)
+    }
+
+</script>

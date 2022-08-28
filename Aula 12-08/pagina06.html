@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <br>
+    Sabor: <input type="text" id="in_sabor"> <br>
+    Preço: <input type="text" id="in_preco"> <br>
+    Prazo em Minutos: <input type="text" id="in_prazo"> <br>
+    <button onclick="cadastro()">Pedir Pizza!</button>
+
+<!--
+    A tag <div> cria uma caixinha na tela e quebra de linha automat.
+-->
+    <div id="div_pizza">
+        Aguardando o pedido!
+    </div>
+
+</body>
+</html>
+
+<script>
+
+// a innerTHML troca o conteúdo de uma tag qualquer
+    function cadastro() {
+        div_pizza.innerHTML = `A pizza de ${in_sabor.value}, que custou 
+        R$ ${in_preco.value} chegará em ${in_prazo.value} minutos`
+    }
+/*
+no código acima, mudamos o conteúdo da tag cujo id é "div_resultado"
+*/
+</script>

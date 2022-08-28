@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu filme favorito <br>
+    Filme: <input type="text" id="in_filme"> <br>
+    Quantas Vezes ja Assistiu?: <input type="text" id="in_vezes"> <br>
+    Qual a última vez que assistiu?: <input type="text" id="in_ultima"> <br>
+    <button onclick="Filme()">Analisar Filme</button>
+</body>
+</html>
+
+<script>
+    function Filme() {
+        alert(`Você já assistiu ${in_filme.value} pela última vez em ${in_ultima.value}, e já o assistiu ${in_vezes.value} vezes.`)
+    }
+</script>
