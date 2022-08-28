@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nota 1o: <input type="text" id="inp_nota1"> <br>
+    Nota 2o: <input type="text" id="inp_nota2"> <br>
+    Nota 3o: <input type="text" id="inp_nota3"> <br> <br>
+    <button onclick="calcular()">Calcular Média</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+    function calcular() {
+        var nota1 = Number(inp_nota1.value);
+        var nota2 = Number(inp_nota2.value);
+        var nota3 = Number(inp_nota3.value);
+
+        var media = (nota1 + nota2 + nota3) / 3;
+
+        div_mensagem.innerHTML = `Média usando variável: ${media}`;
+
+        media = (nota1 + nota2) / 2;
+
+        div_mensagem.innerHTML += `<br>Média após alteração: ${media}`;
+    }
+</script>
