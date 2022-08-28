@@ -1,2 +1,2 @@
 # Algoritmos
-todo o conteúdo de minhas aulas
+Conteúdo das aulas de algoritmos, html e javascript
