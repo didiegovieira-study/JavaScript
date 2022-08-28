@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    
+    Qual o peso total no elevador?: <input type="text" id="in_elevador"> <br>
+    <button onclick="">Ligar Elevador</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+function elevador() {
+    var peso = Number(in_elevador.value)
+
+    if (peso <= 500){
+        alert(`Elevador vai se mover`)
+    } else {
+        alert(`Alguém precisa descer do elevador`)
+    }
+}
+
+</script>

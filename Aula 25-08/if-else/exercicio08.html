@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    Qual a quantidade de homens?: <input type="text" id="in_homem"> <br>
+    Qual a quantidade de mulheres?: <input type="text" id="in_mulher"> <br>
+    <button onclick="ligar()">Ligar Elevador</button> <br> <br>
+
+    <div id="div_resultado"></div>
+
+
+</body>
+</html>
+
+<script>
+
+function ligar() {
+    var homem = Number(in_homem.value) * 90
+    var mulher = Number(in_mulher.value) * 70
+    var total = homem + mulher
+    var seMover = total - 500
+
+    if (total < 500) {
+        div_resultado.innerHTML = `<span style="color: green;"> Elevador vai se mover, 
+            pois está com ${total}kg </span>`
+    } else {
+        div_resultado.innerHTML = `<span style="color: red;"> Alguém precisa descer. 
+            Precisa perder ${seMover}kg para mover o elevador </span>`
+    }
+
+}
+
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    
+    Quantos filhos você tem?: <input type="text" id="in_filhos"> <br>
+    <button onclick="analisar()">Analisar família</button>
+    <div id="div_resultado"> </div>
+
+</body>
+</html>
+
+<script>
+
+function analisar() {
+    var familia = Number(in_filhos.value)
+    
+    if (familia > 0){
+        div_resultado.innerHTML += `Não tem TV <br>`
+    }
+
+    if (familia > 1){
+        div_resultado.innerHTML += `Não tem internet <br>`
+    }
+
+    if (familia > 2){
+        div_resultado.innerHTML += `Não tem video game <br>`
+    }
+
+    if (familia > 3){
+        div_resultado.innerHTML += `Não tem Netflix <br>`
+    }
+}
+
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+
+    Qual o valor da pizza?: <input type="text" id="in_pizza"><br>
+    Quantos amigos reunidos?: <input type="text" id="in_amigos"> <br>
+    <button onclick="pizza()">Rola a pizza?</button>
+    <div id="div_resultado"></div>
+    
+</body>
+</html>
+
+<script>
+
+function pizza(){
+    var valor = Number(in_pizza.value)
+    var amigos = Number(in_amigos.value)
+    var preco = valor / amigos
+
+    div_resultado.innerHTML = `Cada amigo vai pagar R$${preco} pela pizza`
+
+        if (preco > 20){
+            div_resultado.innerHTML = `Deu ruim! Pizza muito cara!`
+        }
+}
+
+</script>

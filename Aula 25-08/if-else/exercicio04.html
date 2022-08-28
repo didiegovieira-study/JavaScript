@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    Qual a frequência do aluno?: <input type="text" id="in_freq">
+    <button onclick="analisar()">Analisar Frequência</button>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+function analisar() {
+    var freq = Number(in_freq.value)
+
+    if (freq < 50){
+        div_resultado.innerHTML = `<br><img src="https://www.imagenspng.com.br/wp-content/uploads/2015/07/minions-35-turista.png">`
+    } else {
+        div_resultado.innerHTML = `<br><img src="https://i1.sndcdn.com/artworks-Q61q2IpGG3x0QvIQ-FRIyHw-t500x500.jpg">`
+    }
+}
+
+</script>

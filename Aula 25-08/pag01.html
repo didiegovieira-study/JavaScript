@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    
+    Nota 1o: <input type="text" id="in_nota1"> <br>
+    Nota 2o: <input type="text" id="in_nota2"> <br> <br>
+    <button onclick="media()">Mostrar a Média!</button>
+    <div id="div_resultado"></div>
+
+
+</body>
+</html>
+
+<script>
+    
+    function media() {
+        var nota1 = Number(in_nota1.value) * 6 
+        var nota2 = Number(in_nota2.value) * 4
+        var media = (nota1 + nota2) / 10
+        div_resultado.innerHTML += `<br>${media}`
+    };
+
+</script>

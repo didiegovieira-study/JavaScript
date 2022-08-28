@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    Nota 1o: <input type="text" id="in_nota1"> <br>
+    Nota 2o: <input type="text" id="in_nota2"> <br>
+    Nota 3o: <input type="text" id="in_nota3"> <br> <br>
+    <button onclick="nota()">Analisar desempenho</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+function nota(){
+    var nota1 = Number(in_nota1.value)
+    var nota2 = Number(in_nota2.value)
+    var nota3 = Number(in_nota3.value)
+    var media = (nota1+nota2+nota3) / 3
+
+    div_resultado.innerHTML = `Sua média foi de ${media}`
+    
+        if (media > 9.4){
+            div_resultado.innerHTML += `Parabéns, você é fora de série!`
+        }
+}
+
+</script>

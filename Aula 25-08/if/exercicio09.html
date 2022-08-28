@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    
+    Qual a última série (SITCOM) que você assistiu?: <input type="text" id="in_serie"> <br>
+    Quantos episodios você já viu da série?: <input type="text" id="in_episodio"> <br> <br>
+    <button onclick="verificar()">Verificar Nivel</button> <br>
+
+    <div id="div_resultado"> </div>
+</body>
+</html>
+
+<script>
+
+function verificar() {
+    var serie = (in_serie.value)
+    var episodio = Number(in_episodio.value)
+    var assistido = (episodio * 22) / 60
+
+    div_resultado.innerHTML = `<br>Vejo que você gosta da série ${serie}`
+        if (assistido > 30){
+            div_resultado.innerHTML += `<br>Uau, você realmente gosta dessa série!`
+        }
+}
+
+</script>

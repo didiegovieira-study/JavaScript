@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+
+    Quantas latinhas de refrigerante você toma por dia?
+    <input type="text" id="in_latinhas">
+    <button onclick="latinha()">Quantos refris?</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function latinha(){
+    var latinhaAno = Number(in_latinhas) * 365
+
+    div_mensagem.innerHTML = `Você consome ${latinhaAno} latinhas por ano`
+
+        if (latinhaAno > 500){
+            div_mensagem.innerHTML += `Cuidado com a diabetes!`
+        }
+}
+
+</script>

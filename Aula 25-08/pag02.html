@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cálculo de desconto</h2>
+
+    Qual seu salário?: <input type="text" id="in_salario">
+    <button onclick="ver_desconto()">Ver desconto</button> <br> <br>
+    <div id="div_salario"></div>
+
+    <button onclick="analisar()">Analisar</button>
+    <div id="div_analise"></div>
+</body>
+</html>
+
+<script>
+
+    function ver_desconto() {
+        var salario = Number(in_salario.value)
+
+        if  (salario > 7000) {
+            salario = salario - 200
+        }
+        else (salario < 7000)
+            salario = salario - 120
+        
+        div_salario.innerHTML = `Salário líquido: R$${salario}`
+}
+
+    function analisar() {
+        div_analise.innerHTML = ""
+
+        var salario = Number(in_salario.value)
+
+        if (salario < 2000) {
+            div_analise.innerHTML += "É menor que 2000 <br>"
+        }
+
+        if (salario <= 2000) {
+            div_analise.innerHTML += "É menor ou igual a 2000 <br>"
+        }
+
+        if (salario > 5000) {
+            div_analise.innerHTML += "É maior que 5000 <br>"
+        }
+
+        if (salario >= 5000) {
+            div_analise.innerHTML += "É maior ou igual a 5000 <br>"
+        }
+
+        if (salario == 4000) {
+            div_analise.innerHTML += "É igual a 4000 <br>"
+        }
+
+        if (salario != 8000) {
+            div_analise.innerHTML += "NÃO É 8000 <br>"
+        }
+}
+
+</script>

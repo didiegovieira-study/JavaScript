@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+
+    Qual a quantidade de kWh consumida por mês?: <input type="text" id="in_kwh"> <br>
+    <button onclick="kwh()">calcular conta de luz</button>
+    
+</body>
+</html>
+
+<script>
+
+function kwh(){
+    var kwhconsumida = Number(in_kwh.value)
+
+        if (kwhconsumida < 100){
+            var kwhconsumida = kwhconsumida * 0.9
+        }
+
+    alert (`Você tem que pagar ${kwhconsumida} kWh`)
+}
+
+</script>
