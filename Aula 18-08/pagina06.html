@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concatenação</title>
+</head>
+<body>
+
+    <h2>Refeições no dia</h2>
+    
+    <button onclick="pao()">Pão de Chapa</button>
+    <button onclick="pf()">Prato Feito</button>
+    <button onclick="sorvete()">Casquinha do Mc</button>
+<br> <br>
+    <div id="div_refeicoes">
+        Suas refeições hoje: <br>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function pao() {
+        div_refeicoes.innerHTML += `<br> Pão na Chapa`
+    }
+    
+    function pf() {
+        div_refeicoes.innerHTML += `<br> Prato Feito`
+    }
+    function sorvete() {
+        div_refeicoes.innerHTML += `<br>Casquinha do Mc`
+    }
+</script>

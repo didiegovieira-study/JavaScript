@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09</title>
+</head>
+<body>
+    <h2>Calculadora</h2> <br>
+    Numero 1o: <input type="text" id="in_numero1"> <br> <br>
+    Numero 2o: <input type="text" id="in_numero2"> <br> <br>
+    <button onclick="somar()">Somar!</button>
+    <button onclick="subtrair()">Subtrair!</button>
+    <button onclick="multiplicar()">Multiplicar!</button>
+    <button onclick="dividir()">Dividir!</button>
+    <br>
+    <Div id="div_calculadora">
+        <br> Calculadora: <br>
+    </Div>
+
+</body>
+</html>
+
+<script>
+    function somar(){
+        div_calculadora.innerHTML += `<br>${(Number(in_numero1.value) + Number(in_numero2.value))}`
+    }
+
+    function subtrair(){
+        div_calculadora.innerHTML += `<br>${(Number(in_numero1.value) - Number(in_numero2.value))}`
+    }
+
+    function multiplicar(){
+        div_calculadora.innerHTML += `<br>${(Number(in_numero1.value) * Number(in_numero2.value))}`
+    }
+
+    function dividir(){
+        div_calculadora.innerHTML += `<br>${(Number(in_numero1.value) / Number(in_numero2.value))}`
+    }
+</script>

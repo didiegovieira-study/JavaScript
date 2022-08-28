@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpando o corpo de uma tag</title>
+</head>
+<body>
+    <h2>Como está meu humor</h2> <br>
+
+    <button onclick="feliz()">Feliz!</button>
+    <button onclick="neutro()">Neutro</button>
+    <button onclick="triste()">Triste</button>
+    <button onclick="apagar()">Não quero dizer</button> <br>
+
+    <div id="div_humor">Aqui está seu humor</div>
+</body>
+</html>
+
+<script>
+    function feliz(){
+    div_humor.innerHTML = `Você está Feliz!`
+    }
+
+    function neutro(){
+    div_humor.innerHTML = `Você está neutro`
+    }
+
+    function triste(){
+    div_humor.innerHTML = `Você está triste`
+    }
+
+    function apagar(){
+// assim apagamos o conteudo de uma tag qualquer
+    div_humor.innerHTML = ``
+    }
+</script>

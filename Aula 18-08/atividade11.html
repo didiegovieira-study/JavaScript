@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 11</title>
+</head>
+<body>
+    <h2>Quantidade de Ingressos</h2>
+    Qual a quantidade de ingressos vendidos para estudante: <br>
+    <input type="text" id="in_ingressoEstudante"> <br> <br>
+    Qual a quantidade de ingresso comuns vendidos: <br>
+    <input type="text" id="in_ingressoComum"> <br> <br>
+    Qual o valor do ingresso comum: <br>
+    <input type="text" id="in_valor"> <br> <br>
+    <button onclick="dale()">Calcular a Arrecadação</button>
+</body>
+</html>
+
+<script>
+    
+    function dale(){
+        alert(`A arrecadação foi de R$${((Number(in_ingressoEstudante.value) * Number(in_valor.value)) / 2) + (Number(in_ingressoComum.value) * Number(in_valor.value))}`)
+    }
+
+</script>

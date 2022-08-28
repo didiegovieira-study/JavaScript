@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <h2>Calculadora Loka</h2>
+
+    1o Número: <input type="text" id="in_numero1"> <br>
+    2o Número: <input type="text" id="in_numero2"> <br>
+
+    <button onclick="multiplicar()">Multiplicar</button>
+    <button onclick="dividir()">Dividir</button>
+    <button onclick="subtrair()">Subtrair</button>
+    <button onclick="somar()">Somar</button>
+    <br><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function multiplicar(){
+        div_resultado.innerHTML = 
+            Number(in_numero1.value) * Number(in_numero2.value)
+        in_numero1.value = ''
+        in_numero2.value = ''
+    }
+
+    function dividir(){
+        div_resultado.innerHTML = 
+            Number(in_numero1.value) / Number(in_numero2.value)
+        in_numero1.value = ''
+        in_numero2.value = ''
+    }
+
+    function subtrair(){
+        div_resultado.innerHTML = 
+            Number(in_numero1.value) - Number(in_numero2.value)
+        in_numero1.value = ''
+        in_numero2.value = ''
+    }
+
+    function somar(){
+        div_resultado.innerHTML = 
+            Number(in_numero1.value) + Number(in_numero2.value)
+        in_numero1.value = ''
+        in_numero2.value = ''
+    }
+</script>

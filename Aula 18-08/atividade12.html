@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12</title>
+</head>
+<body>
+    <h2>Calculadora de IMC</h2> <br>
+    Qual seu peso: <input type="text" id="in_peso"> <br><br>
+    Qual sua altura: <input type="text" id="in_altura"> <br><br>
+    <button onclick="imcHomem()">IMC Homem</button>
+    <button onclick="imcMulher()">IMC Mulher</button>
+
+    <div id="div_imc">
+        Aqui está seu calculo IMC.
+    </div>
+
+</body>
+</html>
+
+<script>
+    function imcHomem(){
+        div_imc.innerHTML = `${Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))}`
+    }
+
+    function imcMulher(){
+        div_imc.innerHTML = `${(Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))) - (Number(in_peso.value) / (Number(in_altura.value)*Number(in_altura.value))) * Number(0.1)}`
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 10</title>
+</head>
+<body>
+
+    <h2>Quanto a torneira desperdiça!</h2>
+    <br><br>
+    Torneira 1: <input type="text" id="in_torneira1">
+    Tonreira 2: <input type="text" id="in_torneira2">
+    Torneira 3: <input type="text" id="in_torneira3">
+    <button onclick="torneira()">Total Gasto!</button>
+
+</body>
+</html>
+
+<script>
+    function torneira(){
+        alert (`O total de minutos gastos é: ${((Number(in_torneira1.value) + Number(in_torneira2.value)) + Number(in_torneira3.value))} `)
+        alert (`Suas 3 torneiras, juntas, desperdiçaram ${(Number(in_torneira1.value) * 15) + (Number(in_torneira2.value) * 15) + (Number(in_torneira3.value) * 15)} litros de água`)
+    }
+</script>

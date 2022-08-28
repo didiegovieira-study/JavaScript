@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 05</title>
+</head>
+<body>
+    
+    Idade: <input type="text" id="in_idade">
+    <button onclick="homem()">Aposentadoria Homem</button>
+    <button onclick="mulher()">Aposentadoria Mulher</button> <br>
+    <div id="div_idade">
+
+    </div>
+
+
+</body>
+</html>
+
+<script>
+    function homem(){
+        div_idade.innerHTML = `Você é homem e falta ${70 - Number(in_idade.value)} anos para aposentar`
+    }
+
+    function mulher(){
+        div_idade.innerHTML = `Você é mulher e falta ${60 - Number(in_idade.value)} anos para aposentar`
+    }
+</script>

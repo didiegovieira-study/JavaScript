@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+<body>
+    <h2>Digite uma memória pro seu diário</h2>
+    <br>
+    <input type="text" id="in_memoria">
+    <button onclick="memoria()">Registrar Memória</button>
+    <div id="div_memoria"></div>
+</body>
+</html>
+
+<script>
+    function memoria(){
+        div_memoria.innerHTML += `<br>${in_memoria.value}`
+        // o comando a baixo é para limpar a barra de input
+        in_memoria.value = ''
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 03</title>
+</head>
+<body>
+
+    <h2>Média do Aluno:</h2>
+
+    Nota 1o: <input type="text" id="in_nota1"> <br>
+    Nota 2o: <input type="text" id="in_nota2"> <br>
+    <button onclick="media()">Ver Média!</button> <br>
+    <div id="div_media">
+        Sua média aparecerá aqui!
+    </div>
+    
+</body>
+</html>
+
+<script>
+    function media(){
+        div_media.innerHTML = `Sua média foi de 
+        ${(Number(in_nota1.value) + Number(in_nota2.value)) / 2}`
+    }
+</script>

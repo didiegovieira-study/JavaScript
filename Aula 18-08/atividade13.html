@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 13</title>
+</head>
+<body>
+    <h2>Descontando Tributos do CLT</h2> <br>
+    Qual o seu salário bruto?: <input type="text" id="in_salarioBruto"> <br>
+    <button onclick="inss()">Veja o Desconto de INSS</button>
+    <button onclick="ir()">Veja o Desconto de IR</button>
+    <button onclick="sindical()">Veja o Desconto do Sindical</button>
+    <button onclick="desconto()">Descubra Quanto Receberá</button>
+    <div id="div_inss"></div> <br>
+    <div id="div_ir"></div> <br>
+    <div id="div_sindical"></div> <br>
+</body>
+</html>
+
+<script>
+    function inss(){
+        div_inss.innerHTML = `${Number(in_salarioBruto.value) * 0.1}`
+    }
+
+    function ir(){
+        div_ir.innerHTML = `${Number(in_salarioBruto.value) * 0.2}`
+    }
+
+    function sindical(){
+        div_sindical.innerHTML = `${((Number(in_salarioBruto.value) / 30) * 1)}`
+    }
+
+    function desconto(){
+        alert(`Apesar de seu bruto ser R$${Number(in_salarioBruto.value)}, após os descontos, você receberá somente R$${Number(in_salarioBruto.value) - ((((Number(in_salarioBruto.value) * 0.1)) + ((Number(in_salarioBruto.value) * 0.2))) + ((Number(in_salarioBruto.value) / 30) * 1))}`)
+    }
+</script>

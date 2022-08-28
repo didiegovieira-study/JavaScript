@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 08</title>
+</head>
+<body>
+    Nota na Continuada: <input type="text" id="in_continuada"> <br> <br>
+    Nota na Semestral: <input type="text" id="in_semestral"> <br> <br>
+    Nome do Aluno: <input type="text" id="in_aluno"> <br> <br>
+    <button onclick="media()">Calcule sua média</button> <br> <br>
+    <div id="div_media">
+        Sua média aparecerá aqui.
+    </div>
+</body>
+</html>
+
+<script>
+    function media(){
+       div_media.innerHTML = `A média de ${in_aluno.value} será 
+       de ${((Number(in_continuada.value) * Number(0.4)) + (Number(in_semestral.value) * Number(0.6)))}`
+    }
+</script>
