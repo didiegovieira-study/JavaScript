@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wen Rac</title>
+</head>
+<body>
+    <h1>Wen Rac</h1>
+    Qual o valor do carro a vista: <input id="in_valorAvista"> <br><br>
+    Qual a taxa de juros a.m(ao mês): <input id="in_jurosMes"> <br><br>
+    Qual a quantidade de parcelas: <input id="in_parcelas"> <br><br>
+    <button onclick="calcular()">Calcular Prejú</button><br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var valor = Number(in_valorAvista.value);
+        var juros = Number(in_jurosMes.value);
+        var parcelas = Number(in_parcelas.value);
+        var primeiro = valor / parcelas;
+        var razao = 1 + juros / 100;
+
+        var financiamento =  primeiro * ((razao ** parcelas) - 1) / (razao - 1);
+        var preco = valor * 0.8;
+
+        var compra = financiamento / valor;
+
+        div_resultado.innerHTML = `Seu carro vai sair por um total de R$${financiamento}. 
+        Após 1 mês, ele já vai valer só R$${preco}. 
+        Porque comprou financiado, vai pagar o correspondente ${compra} carros`;
+    }
+</script>

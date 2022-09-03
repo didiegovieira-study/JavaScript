@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Migas</title>
+</head>
+<body>
+    <h1>4Migas</h1>
+    Qual o valor por grama de sorvete?: <input type="text" id="in_grama"> <br> <br>
+    Qual o peso do sorvete (quantidade de gramas)?: <input type="text" id="in_peso"> <br> <br>
+    Qual o tipo de cobertura?: <input type="text" id="in_cobertura"> <br> <br>
+    Qual o tipo de sorvete?: <input type="text" id="in_sorvete"> <br> <br>
+    <button onclick="calculo()">Calcule o Preço</button> <br> <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+    function calculo(){
+    var grama = Number(in_grama.value)
+    var peso = Number(in_peso.value)
+    var preco = grama * peso
+    var tipoCobertura = Number(in_cobertura.value)
+    var tipoSorvete = Number(in_sorvete.value)
+
+        if (tipoSorvete == 'G'){
+            var preco = preco * 1.11
+        } else {
+            var preco = preco * 0.90
+        }
+
+        if (tipoCobertura != 'C'){
+            var preco = preco + 0.01
+        }
+
+        if (preco > 10) {
+            div_resultado.innerHTML = `<span style="color: green">O seu sorvete vai custar R$${preco} 
+                e vai comprometer a mesada</span>`
+            
+        } else {
+            div_resultado.innerHTML = `<span style="color: blue">Hoje você está maneirando hoje, 
+                gastou somente R$${preco}.</span>`
+        }
+
+        
+    }
+</script>
