@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    Nota 1o: <input type="text" id="in_nota1"> <br>
+    Nota 2o: <input type="text" id="in_nota2"> <br>
+    <button onclick="calcule()">Ver Média</button> <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+
+<script>
+function calcule() {
+    var nota1 = Number(in_nota1.value)
+    var nota2 = Number(in_nota2.value)
+    var media = ((nota1+nota2)/2).toFixed(2)
+
+    div_resultado.innerHTML = `Sua média foi de ${media}`
+}
+</script>

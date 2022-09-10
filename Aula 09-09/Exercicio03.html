@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+
+    Diga um Número: <input type="text" id="in_num1"> <br>
+    Diga outro Número: <input type="text" id="in_num2"> <br>
+    <button onclick="soma()">Somar!</button>
+    <button onclick="subtrair()">Subtrair!</button>
+    <button onclick="multiplicar()">Multiplicar!</button>
+    <button onclick="dividir()">Dividir!</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    function soma() {
+        var num1 = Number(in_num1.value)
+        var num2 = Number(in_num2.value)
+        var total = (num1 + num2).toFixed(2)
+
+        div_resultado.innerHTML += `A soma entre ${num1} e ${num2} é ${total} <br>`
+    }
+
+    function subtrair() {
+        var num1 = Number(in_num1.value)
+        var num2 = Number(in_num2.value)
+        var total = (num1 - num2).toFixed(2)
+
+        div_resultado.innerHTML += `A soma entre ${num1} e ${num2} é ${total} <br>`
+    }
+
+    function multiplicar() {
+        var num1 = Number(in_num1.value)
+        var num2 = Number(in_num2.value)
+        var total = (num1 * num2).toFixed(2)
+
+        div_resultado.innerHTML += `A soma entre ${num1} e ${num2} é ${total} <br>`
+    }
+
+    function dividir() {
+        var num1 = Number(in_num1.value)
+        var num2 = Number(in_num2.value)
+        var total = (num1 / num2).toFixed(2)
+
+        div_resultado.innerHTML += `A soma entre ${num1} e ${num2} é ${total} <br>`
+    }
+</script>

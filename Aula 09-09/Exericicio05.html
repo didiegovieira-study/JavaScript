@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    
+    Qual o valor do salário bruto?: <input type="text" id="in_salarioBruto"> <br>
+    <button onclick="calculo()">Calcule os Impostos</button>
+
+</body>
+</html>
+
+<script>
+    function calculo() {
+        var salario = Number(in_salarioBruto.value).toFixed(2)
+        var inss = salario * 0.1
+        var ir = salario * 0.2
+        var imposto = (salario / 30) * 1
+        var total = (salario - inss - ir - imposto).toFixed(2)
+
+        alert(`Apesar de seu bruto ser R$${salario}, após os descontos, você receberá somente R$${total}`)
+
+    }
+</script>
