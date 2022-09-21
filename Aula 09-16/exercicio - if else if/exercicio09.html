@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    
+    Qual sua meta de economia?: <input type="text" id="in_meta"> <br> <br>
+    Quanto você tem gurdado?: <input type="text" id="in_eco"> <br> <br>
+
+    <button onclick="calculo()">Analisar Compra</button> <br>
+    <div id="div_resultado"></div>
+
+
+
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var meta = Number(in_meta.value)
+        var eco = Number(in_eco.value)
+
+        var ultra = (eco - meta)
+        var falta = (meta - eco)
+
+        if (eco >= meta) {
+            div_resultado.innerHTML = `Parabéns, meta alcançada!`
+            if (eco > meta) {
+            div_resultado.innerHTML += `<br> Meta ultrapassada em ${ultra}`
+        }
+        }  else if (eco < meta) {
+            div_resultado.innerHTML = `Ainda em busca da meta! Falta ${falta}`
+        }
+    }
+
+</script>

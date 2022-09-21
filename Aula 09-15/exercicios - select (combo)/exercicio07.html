@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Execicio 07</title>
+</head>
+<body>
+    
+    <h2>Palmeiras e o Resto</h2>
+
+    <select name="" id="sel_escudo">
+        <option value="https://i.superesportes.com.br/ZRED3sFYiH5DP4T9QMQF01WsJIc=/1200x1200/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2022/07/06/3972663/o-palmeiras-goleou-e-se-classificou-na-libertadores_1_144853.png">Palmeiras</option>
+        <option value="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/2026.png">São Paulo</option>
+        <option value="https://a.espncdn.com/combiner/i?img=/i/teamlogos/soccer/500/3459.png">Ponte Preta</option>
+        <option value="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1200px-Santos_logo.svg.png">Santos</option>
+    </select>
+    <button onclick="resultado()">Ver Escudo</button>
+    <br>
+    <img src="" id="img_escudo" style="height: 200px;">
+
+
+</body>
+</html>
+
+<script>
+    function resultado() {
+        img_escudo.src = sel_escudo.value
+    }
+</script>

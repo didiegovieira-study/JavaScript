@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+
+    <h2>Economia</h2>
+    
+    Qual valor você tem economizado?: <input type="text" id="in_eco"> <br> <br>
+    <button onclick="calculo()">Poder de Compra</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var eco = Number(in_eco.value)
+
+        if (eco <= 0) {
+            div_resultado.innerHTML = `Nada de compras :( <br>`
+
+        } if (eco > 0) {
+            div_resultado.innerHTML += `Viajem de ida e volta pra Praia Grande <br>`
+
+        } if (eco > 100) {
+            div_resultado.innerHTML += `Uma boa moto usada <br>`
+
+        } if (eco > 4000) {
+            div_resultado.innerHTML += `Mais alguma bobagem legal <br>`
+
+        }
+
+    }
+
+</script>

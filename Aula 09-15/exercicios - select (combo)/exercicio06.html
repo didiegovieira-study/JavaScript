@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    <h2>Estações do Ano</h2>
+
+    <select name="" id="sel_estacoes" onchange="resultado()">
+        <option value="https://thumbs.dreamstime.com/b/borboletas-na-primavera-39032667.jpg">Primavera</option>
+        <option value="https://s1.static.brasilescola.uol.com.br/galeria/images/2d28fe1a3b1ed960bca2e3798803c6b5.jpg">Verão</option>
+        <option value="https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2019/03/20/istock-1029169532.jpg">Outono</option>
+        <option value="https://thumbs.dreamstime.com/b/feliz-natal-e-cart%C3%A3o-do-ano-novo-feliz-com-c%C3%B3pia-espa%C3%A7o-82233888.jpg">Inverno</option>
+    </select>
+    <br>
+    <img src="" id="img_fruta" style="height: 200px;">
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var estacoes = sel_estacoes.value
+
+        img_fruta.src = estacoes
+    }
+
+</script>

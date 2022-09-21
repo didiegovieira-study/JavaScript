@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis globais</title>
+</head>
+<body>
+    Nome: <input onkeyup="verificar()" id="ipt_nome" type="text"> <br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script> 
+    /*  Declarando uma variável global, que será criada junto com o carregamento da página:
+
+        As variáveis globais podem ser utilizadas/manipuladas/alteradas por qualquer função;
+        Quando alterar o valor da variável global em uma função, caso chame em outra, já utilizará o valor atualizado; 
+    */
+
+    var nome = "";
+    /*  Como a variável passa a existir no momento em que a página carrega, não se deve referenciar uma input para definir a variável, como:
+            var nome = ipt_nome.value;
+        Caso utilizemos a sintaxe acima, o usuário ainda não interagiu com a input quando a página carrega, portanto, o valor da variável se manterá vazio (pois o campo de input ainda não foi manipulado);
+        Por esse motivo, é uma má prática referenciar inputs para declarar variáveis globais;
+        É recomendável definir a variável com um valor vazio "" ou 0, caso seja um número, para posteriormente reatribuir o valor da variável;
+    */
+
+    function verificar() { // invocada a cada caractere inserido no campo "ipt_nome"
+        nome = ipt_nome.value; // REATRIBUINDO o valor da variável global "nome"
+        div_mensagem.innerHTML = "Olá, " + nome;
+    }
+
+    // chame essa função pelo console usando testarInput() para testá-la
+    function testarInput() {
+        alert(nome);
+    }
+</script>
+

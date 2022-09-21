@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    
+    <h2>Meses do Ano</h2>
+
+    <select name="" id="sel_meses" onchange="estacoes()">
+        <option value="Janeiro">Janeiro</option>
+        <option value="Fevereiro">Fevereiro</option>
+        <option value="Março">Março</option>
+        <option value="Abril">Abril</option>
+        <option value="Maio">Maio</option>
+        <option value="Junho">Junho</option>
+        <option value="Julho">Julho</option>
+        <option value="Agosto">Agosto</option>
+        <option value="Setembro">Setembro</option>
+        <option value="Outubro">Outubro</option>
+        <option value="Novembro">Novembro</option>
+        <option value="Dezembro">Dezembro</option>
+    </select>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    
+    function estacoes() {
+        var estacoes = sel_meses
+
+        if (estacoes = 'Março', estacoes = 'Abril', estacoes = 'Maio') {
+            div_mensagem.innerHTML = ''
+            div_mensagem.innerHTML += 'Outono'
+        } else if (estacoes = 'Junho', estacoes = 'Julho', estacoes = 'Agosto') {
+            div_mensagem.innerHTML = ''
+            div_mensagem.innerHTML += 'Inverno'
+        } else if (estacoes = 'Setembro', estacoes = 'Outubro', estacoes = 'Novembro') {
+            div_mensagem.innerHTML = ''
+            div_mensagem.innerHTML += 'Primavera'
+        } else {
+            div_mensagem.innerHTML = ''
+            div_mensagem.innerHTML += 'Verão'
+        }
+    }
+
+</script>

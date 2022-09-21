@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 id="h2_resultado">Vida do Lutador: 1000</h2>
+
+        <div id="div_resultado"></div>
+
+    <br>
+
+        <img src="https://bolavip.com/__export/1661353075808/sites/bolavip/img/2022/08/24/gettyimages-1327903344-594x594_crop1661350145956.jpg_242310155.jpg" id="img_lutador" width="400px">
+
+    <br>
+    <br>
+
+        <div id="div_botoes">
+            <button onclick="apanhar()">Apanhar!</button>
+            <button onclick="concentrar()">Concentrar Força!</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var vida = 1000;
+
+    function apanhar() {
+        vida -= 100;
+
+        h2_resultado.innerHTML = `Vida do Lutador: ${vida.toFixed(2)}`
+
+        if (vida <= 0) {
+            div_resultado.innerHTML = `Lutador já era!`
+            img_lutador.src = `https://conteudo.imguol.com.br/c/esporte/4f/2021/01/24/mcgregor-no-chao-do-octogono-apos-ser-nocauteado-por-dustin-poirier-no-ufc-257-1611468558436_v2_450x337.jpg`
+
+            div_botoes.innerHTML = ''
+        } else {
+            div_resultado.innerHTML = `Lutador ainda vivo!`
+        }
+    }
+
+    function concentrar() {
+        vida += (vida*0.05);
+
+        h2_resultado.innerHTML = `Vida do Lutador: ${vida.toFixed(2)}`
+    }
+
+</script>

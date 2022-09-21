@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <h2>Tuvalu</h2>
+
+    Qual a renda familiar mensal: <input type="text" id="in_renda"> <br>
+    <button onclick="calculo()">Analisar Renda</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var renda = Number(in_renda.value)
+
+        if (renda <= 250) {
+            var classe = 'Classe E'
+        } else if (renda <= 900) {
+            var classe = 'Classe D'
+        } else if (renda <= 2500) {
+            var classe = 'Classe C'
+        } else if (renda <= 9500) {
+            var classe = 'Classe B'
+        } else if (renda > 9500) {
+            var classe = 'Classe A'
+        }
+
+        div_resultado.innerHTML = `${classe}`
+    }
+
+</script>

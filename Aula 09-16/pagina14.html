@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variáveis globais</title>
+</head>
+<body>
+
+    <button onclick="andar()">Andar um passo</button>
+    <button onclick="verificarPassos()">Verificar Passos</button>
+    <div id="div_mensagem">ZERO</div>
+</body>
+</html>
+
+<script>
+    /*  Declarando uma variável global, que será criada junto com o carregamento da página:
+
+        As variáveis globais podem ser utilizadas/manipuladas/alteradas por qualquer função;
+        Quando alterar o valor da variável global em uma função, caso chame em outra, já utilizará o valor atualizado; 
+    */
+   
+    var passos = 0;
+
+    function andar() {
+        passos++;
+    }
+    /*  A função andar() atualiza a variável "passos", incrementando 1 a cada vez que a função for chamada;
+
+        "++" representa um atalho matemático, sendo um operador de incremento;
+        A sintaxe "passos++" serve para incrementar 1, normalmente utilizado para contadores;
+        Representa a mesma sintaxe que: "passos = passos + 1" ou "passos += 1";
+        
+        Lembrando que o posicionamento do operador influencia no seu uso:
+            var passos = 0;
+            alert(passos++)   -> mostra o valor atual da variável e depois incrementa 1
+            alert(++passos)   -> incrementa 1 e depois mostra o valor atual da variável
+
+            
+        Existe também um operador "--" para decremento ("passos--" ou "--passos"), reduzindo de 1 em 1;
+    */
+
+    function verificarPassos() {
+        div_mensagem.innerHTML = passos;
+    }
+    /*  A função verificarPassos() utiliza a variável global "passos" para exibir seu valor na "div_mensagem" 
+        Caso chame a variável após ela ter sido alterada pela função "andar", já utilizará seu valor atualizado
+    */
+
+</script>

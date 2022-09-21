@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    <h2>Altura</h2>
+
+    Qual sua altura: <input type="text" id="in_altura" onkeyup="resultado()"> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var altura = Number(in_altura.value).toFixed(2)
+
+        if (altura <= 1.65) {
+            var frase = 'Você pode ser piloto de corrida'
+        } else if (altura <= 1.80) {
+            var frase = 'Você pode ser jogador de futebol'
+        } else if (altura > 1.80) {
+            var frase = 'Você pode ser jogador de vôlei ou basquete'
+        }
+
+        div_resultado.innerHTML = `${frase}`
+    }
+
+</script>

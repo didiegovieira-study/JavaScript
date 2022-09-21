@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <h2>Para o ser humano, a temperatura é...</h2>
+
+    <input type="text" id="in_graus" onkeyup="resultado()"> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var graus = Number(in_graus.value)
+
+        if (graus < 14) {
+            var temp = 'Congelante'
+        } else if (graus < 21) {
+            var temp = 'Com Frio'
+        } else if (graus < 24) {
+            var temp = 'Confortável'
+        } else if (graus <= 31) {
+            var temp = 'Com Calor'
+        } else if (graus > 31) {
+            var temp = 'Calor Escaldante'
+        }
+
+        div_resultado.innerHTML = `${temp}`
+    }
+
+</script>

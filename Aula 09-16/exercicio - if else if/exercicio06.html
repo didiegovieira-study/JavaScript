@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    Qual time grande de São Paulo você torce?:
+    <select name="" id="sel_times">
+        <option value="">- Selecione um Time -</option>
+        <option value="1">Palmeiras</option>
+        <option value="2">Santos</option>
+        <option value="3">São Paulo</option>
+        <option value="4">Ponte Preta</option>
+    </select>
+    <br> <br>
+    <button onclick="calculo()">Fale sobre esse time</button>
+    <div id="div_resultado"></div>
+    
+
+</body>
+</html>
+
+<script>
+
+    function calculo() {
+        var times = sel_times.value
+
+        if (times == '') {
+            div_resultado.innerHTML = ''
+        } else if (times == 1) {
+            div_resultado.innerHTML = `<span style="background-color: green; color: white">Salve o alviverde imponente</span>`
+        } else if (times == 2) {
+            div_resultado.innerHTML = `<b style="background-color: white; color: black">Agora que dá a bola é o Santos</b>`
+        } else if (times == 3) {
+            div_resultado.innerHTML = `<span style="background-color: black; color: red">Salve o Tricolor paulista</span>`
+        } else if (times == 4) {
+            div_resultado.innerHTML = `<span style="background-color: black; color: white">Salve a Ponte Preta</span>`
+        }
+    }
+
+</script>

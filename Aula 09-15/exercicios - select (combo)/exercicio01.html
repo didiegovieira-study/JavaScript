@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <h2>Herois do One Punch Man</h2>
+    
+    <select name="" id="sel_heroi" onchange="heroi()">
+        <option value="Class A">Metal Night</option>
+        <option value="Class B">Fubuki</option>
+        <option value="Class A">Máscara Doce</option>
+        <option value="Class S">Prisioneiro Puri Puri</option>
+        <option value="Class C">Cavaleiro sem Licença</option>
+    </select>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+    var herois = sel_heroi.value
+
+    function heroi() {
+        div_resultado.innerHTML = `Esse(a) herói(na) é da classe ${herois}`
+    }
+</script>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Teste de Saude</h1>
+    <input type="text" id="in_passos" onkeyup="analisar()">
+    <div id="div_saude"></div>
+
+</body>
+</html>
+
+<script>
+    function analisar() {
+        var passos = Number(in_passos.value)
+
+        var analise = "Você é "
+
+        if (passos < 200) {
+            analise += "MUITO sedentário"
+        } else if (passos <= 2000) {
+            analise += "sedentário"
+        } else if (passos <= 5000) {
+            analise += "não é sedentário"
+        } else {
+            analise += "quase atleta"
+        }
+        div_saude.innerHTML = analise
+    }
+</script>

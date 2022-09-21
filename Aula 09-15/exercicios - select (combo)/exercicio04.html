@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    <h2>Oração pela paz</h2>
+    <select name="" id="sel_frase" onchange="resultado()">
+        <option value="que eu leve o Amor">Onde houver Ódio</option>
+        <option value="que eu leve o Perdão">Onde houver Ofensa</option>
+        <option value="que eu leve a União">Onde houver Discórdia</option>
+        <option value="que eu leve a Fé">Onde houver Dúvida</option>
+    </select>
+
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var frase = sel_frase.value
+
+        alert(`${frase}`)
+    }
+
+</script>

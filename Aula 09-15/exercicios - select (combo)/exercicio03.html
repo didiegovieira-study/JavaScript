@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <h2>Mercearia do seu Zé</h2>
+
+    <select name="" id="sel_mercearia">
+        <option value="2.40">Leite</option>
+        <option value="4.30">Farinha</option>
+        <option value="1.50">Pão</option>
+        <option value="6.29">Queijo</option>
+    </select>
+    <button onclick="resultado()">ver preço</button>
+
+</body>
+</html>
+
+<script>
+    function resultado() {
+        var preco = Number(sel_mercearia.value).toFixed(2)
+
+        alert(`Isso custa R$${preco}`)
+    }
+</script>

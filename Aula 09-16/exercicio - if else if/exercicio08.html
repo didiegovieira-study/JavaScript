@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    <h2>Controle Nutricional</h2>
+
+    Quantos pães franceses você tem comigo?: <input type="text" id="in_pao"> <br> <br>
+    Quantos pacotes de bolacha recheada você tem comigo?: <input type="text" id="in_bolacha"> <br> <br>
+    Quantos copos de achocolatado você tem tomado?: <input type="text" id="in_acho"> <br> <br>
+
+    <button onclick="resultado()">Verificar Calorias</button> <br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var pao = Number(in_pao.value) * 50
+        var bolacha = Number(in_bolacha.value) * 80
+        var achocolatado = Number(in_acho.value) * 70
+
+        var calorias = (pao + bolacha + achocolatado)
+
+        if (calorias < 200) {
+            div_resultado.innerHTML = `Parabéns, vai sair em forma da quarentena!`
+        } else if (calorias < 400) {
+            div_resultado.innerHTML = `Cuidado, vai ficar mais "fofinho(a)" após quarentena!`
+        } else if (calorias > 400) {
+            div_resultado.innerHTML = `Bom, acho que muitos não vão te reconhecer após a quarentena`
+        }
+    }
+
+</script>

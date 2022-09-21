@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    
+    <h2>O quão habilidoso é nos clique</h2>
+
+    <button onclick="resultado()">Clica neu</button> <br> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    var clique = 0;
+
+    function resultado() {
+        clique++;
+
+        if (clique < 5) {
+            div_resultado.innerHTML = `Dedo fraquinho, hein`
+        } else if (clique < 10) {
+            div_resultado.innerHTML = `Dedo bom, mano`
+        } else if (clique < 15) {
+            div_resultado.innerHTML = `Gosta de clicar, hein!`
+        } else if (clique > 15) {
+            div_resultado.innerHTML = `Eita dedo nervoso!`
+        }
+    }
+
+</script>

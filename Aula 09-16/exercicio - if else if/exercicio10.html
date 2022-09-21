@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    
+    <h2>Banco SPTO</h2>
+
+    Qual seu nome?: <input type="text" id="in_nome"> <br> <br>
+    Qual seu saldo?: <input type="text" id="in_saldo"> <br> <br>
+
+    <button onclick="resultado()">Verificar Conta</button> <br>
+
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var nome = (in_nome.value)
+        var saldo = Number(in_saldo.value)
+
+        if (saldo < 0) {
+            div_resultado.innerHTML = `Com o saldo de ${saldo} o cliente ${nome} está com saldo devedor`
+        } else if (saldo <= 2000) {
+            div_resultado.innerHTML = `Com o saldo de ${saldo} o cliente ${nome} está com saldo NORMAL`
+        } else if (saldo < 5000) {
+            div_resultado.innerHTML = `Com o saldo de ${saldo} o cliente ${nome} está com saldo ACIMA DA MÉDIA`
+        } else if (saldo > 5000) {
+            div_resultado.innerHTML = `Com o saldo de ${saldo} o cliente ${nome} TEM PERFIL DE INVESTIDOR`
+        }
+    }
+
+</script>
