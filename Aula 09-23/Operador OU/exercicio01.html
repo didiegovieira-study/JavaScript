@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <h1>Frutas</h1>
+
+    Fruta que vai comer: <input id="in_fruta"> <br>
+    <button onclick="fruta()">Vai comer?</button>
+    
+</body>
+</html>
+
+<script>
+
+    function fruta() {
+        var fruta = in_fruta.value;
+        
+        if (fruta == uva || fruta == abacaxi) {
+            alert(`Vai, vai comer ${fruta}`)
+        } else {
+            alert(`A fruta ${fruta} ela não come`)
+        }
+    }
+
+</script>

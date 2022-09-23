@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 16</title>
+</head>
+<body>
+
+    <h2>Saio hoje?</h2>
+
+    <input placeholder="Quanto dinheiro?" id="in_dinheiro">
+    <br>
+    <input placeholder="Temperatura" id="in_temperatura">
+    <br>
+    <button onclick="vou_sair()">Sair</button>
+
+</body>
+</html>
+
+<script>
+
+    function vou_sair() {
+        var dinheiro = Number(in_dinheiro.value)
+        var temperatura = Number(in_temperatura.value)
+
+        if (dinheiro >= 100 && temperatura >= 20) {
+            alert("Sim")
+        } else {
+            alert("Não")
+        }
+    }
+
+</script>

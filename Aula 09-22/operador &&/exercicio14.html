@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    
+    <div id="div_caixa">
+        <h1>Piloto</h1>
+
+        <b>Intervalo de Altura Desejavel pros Próximos Pilotos</b> <br><br>
+        Altura Inicial: <input id="in_inicialp"> <br><br>
+        Altura Final: <input id="in_finalp"> <br><br>
+        <button onclick="resultado()">Calcular</button>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var inicialp = 0;
+    var finalp = 0;
+
+    function resultado() {
+
+        inicialp += Number(in_inicialp.value)
+        finalp += Number(in_finalp.value)
+        
+        if (inicialp >= 1 && finalp >= inicialp) {
+            div_caixa.innerHTML = `<h1>Jogador de Basquete</h1><b>Intervalo de Altura Desejavel pros 
+                Próximos Jogadores de Basquete</b><br><br>Altura Inicial: <input id="in_inicialb"> <br><br>
+                Altura Final: <input id="in_finalb"><br><br><button onclick="resultado2()">Selecionar</button>`
+        } else {
+            alert(`O VALOR INICIAL DEVE SER 1 OU MAIOR E O VALOR FINAL DEVE SER MAIOR QUE O INICIAL`)
+        }
+    }
+
+    var inicialb = 0;
+    var finalb = 0;
+
+    function resultado2() {
+
+        inicialb += Number(in_inicialb.value)
+        finalb += Number(in_finalb.value)
+
+        if (inicialb >= 1 && finalb >= inicialb) {
+            div_caixa.innerHTML = `<h1>- Título: "Processo de Seleção de novos atletas" <br><br>
+            - Subtítulo: Critério de Seleção de piloto - altura entre ${inicialp} até ${finalp} <br><br>
+            - Subtítulo: Critério de Seleção de jogador de basquete - altura entre ${inicialb} até  ${finalb}</h1>`
+
+            div_caixa.innerHTML += `Qual o nome do candidato?: <input id="in_nome"> <br><br>
+            Qual a altura do candidato?: <input id="in_altura"> <br><br>
+            <select id="sel_categoria" onchange="resultado3()">
+                <option value="0">- Selecione -</option>
+                <option value="1">Piloto</option>
+                <option value="2">Jogador de Basquete</option>
+            </select> <br><br>
+            <div id="div_resultado"></div>`
+        } else {
+            alert(`O VALOR INICIAL DEVE SER 1 OU MAIOR E O VALOR FINAL DEVE SER MAIOR QUE O INICIAL`)
+        }
+    }
+
+    function resultado3() {
+        var nome = (in_nome.value)
+        var altura = Number(in_altura.value)
+        var cat = Number(sel_categoria.value)
+
+        if (cat == 1) {
+            if (altura >= inicialp && altura <= finalp) {
+                div_resultado.innerHTML = `O candidato <b>${nome}</b> com altura de <b>${altura}</b> 
+                participará do processo de seleção de piloto`
+            } else {
+                div_resultado.innerHTML = `Infelizmente o candidato <b>${nome}</b> com altura de <b>
+                ${altura}</b> não atende os requisitos para ser piloto`
+            }
+        } else if (cat == 2) {
+            if (altura >= inicialb && altura <= finalb) {
+                div_resultado.innerHTML = `O candidato <b>${nome}</b> com altura de <b>${altura}</b> 
+                participará do processo de jogadores de basquete`
+            } else {
+                div_resultado.innerHTML = `Infelizmente o candidato <b>${nome}</b> com altura de 
+                <b>${altura}</b> não atende os requisitos para ser jogador`
+            }
+        } else {
+                div_resultado.innerHTML = ''
+        }
+    }
+
+</script>

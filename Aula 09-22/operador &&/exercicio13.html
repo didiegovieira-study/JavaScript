@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    
+    <h1>Se pode casar com a filha</h1>
+
+    Você trabalhou por quantos anos?: <input id="in_anos"> <br><br>
+    Quanto sua plantação rendeu em kilos por ha?: <input id="in_kilos"> <br><br>
+    Quantos dias você faltou no trabalho?: <input id="in_falta"> <br><br>
+    <button onclick="resultado()">Deu Match?</button> <br><br>
+    <div id="div_resultado"></div>
+    <img width="400px" src="" alt="" id="img_pai">
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        if (in_anos.value >= 5 && in_kilos.value >= 300 && in_falta.value <= 5 ) {
+            div_resultado.innerHTML = `Minha filha será sua!`
+        } else {
+            div_resultado.innerHTML = `Deu ruim! trabalhe mais 2 anos`
+            img_pai.src = `https://www.snopes.com/tachyon/2015/10/the-rock.jpg`
+        }
+    }
+
+</script>

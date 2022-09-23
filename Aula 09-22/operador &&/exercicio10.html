@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    
+    <h1>Intervalo de Altura</h1>
+
+    <b>Qual o intervalo de altura para os próximos piloto?</b> <br><br>
+    Altura Inicial: <input id="in_alturainicial"> <br><br>
+    Altura Final: <input id="in_alturafinal"> <br><br>
+    <button onclick="altura()">Intervalo de Altura</button>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function altura() {
+        var inicial = Number(in_alturainicial.value)
+        var final = Number(in_alturafinal.value)
+
+        if (inicial > 1 && final > inicial) {
+                div_resultado.innerHTML = `<br><b>Candidato a Piloto</b> <br>
+    Qual o nome do piloto?: <input id="in_nome"> <br><br>
+    Qual a altura do piloto?: <input id="in_altura"> <br><br>
+    <button onclick="piloto()">Emitir Piloto</button> <br><br>
+    <div id="div_resultado2"></div>`
+            } else {
+                alert(`A ALTURA INICIAL DEVE SER MAIOR QUE 1 E A ALTURA FINAL DEVE SER MAIOR QUE A INICIAL`)
+        }
+    }
+
+    function piloto() {
+        var inicial = Number(in_alturainicial.value)
+        var final = Number(in_alturafinal.value)
+        var intervalo = final - inicial
+        var piloto = in_nome.value
+        var altura = Number(in_altura.value)
+
+        if (altura > intervalo) {
+            div_resultado2.innerHTML = `O candidato ${piloto} com altura de ${altura} participará do processo de seleção de piloto`
+        } else {
+            div_resultado2.innerHTML = `Infelizmente o candidato ${piloto} com altura de ${altura} não atende os requisitos`
+        }
+    }
+
+</script>

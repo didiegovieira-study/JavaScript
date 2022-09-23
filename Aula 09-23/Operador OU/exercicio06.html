@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 0</title>
+</head>
+<body>
+
+    <h1>Numeros Cabalisticos</h1>
+
+    <h4>Você já clicou <b style="color: green;" id="b">0</b> vezes</h4>
+    <button onclick="resultado()">Clique Cabalístico</button>
+    
+</body>
+</html>
+
+<script>
+
+    var clique = 0;
+
+    function resultado() {
+        clique++
+
+        b.innerHTML = `${clique}`
+
+        if (clique == 3 || clique == 4 || clique == 7 || clique == 10) {
+            alert(`Você clicou ${clique} vezes e Juliana gosta desse número!`)
+        }
+    }
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <h1>Covid 19</h1>
+
+    Renda Individual: <input id="in_rendaI"> <br>
+    Renda Familiar: <input id="in_rendaF"> <br><br>
+    <button onclick="resultado()">Terei o Beneficio</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var rendai = in_rendaI.value;
+        var rendaf = in_rendaF.value;
+
+        if (rendai <= 2000 || rendaf <= 3000) {
+            div_resultado.innerHTML = `Você terá direito ao auxílio`;
+        } else {
+            div_resultado.innerHTML = `Sem direito ao auxílio`;
+        }
+    }
+
+</script>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    <h1>Pagamento de Compras</h1>
+
+    Qual o metodo de compra?:
+    <select name="" id="sel_metodo">
+        <option value="">- Metodo de Pagamento -</option>
+        <option value="1">Dinheiro</option>
+        <option value="2">Cartão de Débito</option>
+        <option value="3">Cartão de Crédito</option>
+        <option value="4">Boleto</option>
+    </select> <br>
+    <button onclick="resultado()">Analisar Compra</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var metodo = sel_metodo.value;
+
+        if (metodo == 1 || metodo == 2) {
+            div_resultado.innerHTML = `Você terá que pagar a vista`
+        } else {
+            div_resultado.innerHTML = `Pagamento poderá ser parcelado`
+        }
+    }
+
+</script>

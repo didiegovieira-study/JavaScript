@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    Qual a temperatura atual?: <input type="text" id="in_temp"> <br><br>
+    <button onclick="resultado()">Ver situação</button>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        if (in_temp.value >= 21 && in_temp.value <= 24) {
+            alert(`Temperatura Confortavel :)`)
+        } else {
+            alert(`Temperatura DESCONFORTÁVEL`)
+        }
+    }
+
+</script>

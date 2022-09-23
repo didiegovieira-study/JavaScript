@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    
+    <h1>Temperatura Confortavel</h1>
+
+    Qual a temperatura atual?: <input id="in_temp"> <br>
+    <button onclick="resultado()">Analisar Clima</button>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var temp = in_temp.value;
+
+        if (temp == 21 || temp == 24) {
+            if (temp < 21){
+                alert("As pessoas vão ter hipotermia")
+            } else if (temp > 24) {
+                alert("As pessoas vão derreter")
+            }
+        } else {
+            alert("Alerta de desconforto!")
+        }
+    }
+
+</script>

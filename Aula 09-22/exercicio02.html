@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <br> <br>
+
+    <select name="" id="sel_prot" onchange="resultado()">
+        <option value="">- Proteína -</option>
+        <option value="nv">Ovo</option>
+        <option value="v">Soja</option>
+        <option value="nv">Carne</option>
+    </select>
+
+    <br> <br>
+
+    <select name="" id="sel_sobre" onchange="resultado()">
+        <option value="">- Sobremesa -</option>
+        <option value="nv">Pudim</option>
+        <option value="nv">Petit Gateau</option>
+        <option value="v">Brigadeiro de Soja</option>
+    </select>
+
+    <br>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var proteina = (sel_prot.value)
+        var sobremesa = (sel_sobre.value)
+
+        if (proteina == 'v' && sobremesa == 'v') {
+            alert('Você poderia ser vegano(a)')
+        } else {
+            alert('Você NÃO pode ser vegano(a)')
+        }
+    }
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <h1>Faculdade Mentes Brilhantes</h1>
+    Qual sua nota no Enem?: <input id="in_enem"> <br>
+    Qual sua nota interna?: <input id="in_interna"> <br>
+    <button onclick="resultado()">Avaliação</button>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var enem = in_enem.value;
+        var interna = in_interna.value;
+
+        if (enem >= 800 || internet >= 700) {
+            alert(`Parabéns, Aprovado!`)
+        } else {
+            alert(`Tente semestre que vem!`)
+        }
+    }
+
+</script>

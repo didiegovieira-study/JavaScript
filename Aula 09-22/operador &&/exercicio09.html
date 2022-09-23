@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    
+    <h1>Sistema de Login</h1>
+
+    Qual o seu login?: <input type="text" id="in_login"> <br><br>
+    Qual a sua senha?: <input type="password" id="in_senha"> <br><br>
+    Qual o código de segurança?: <input type="text" id="in_seg"> <br><br>
+    <button onclick="resultado()">Entrar</button>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var login = in_login.value
+        var senha = in_senha.value
+        var seg = Number(in_seg.value)
+
+        if (login == 'SPTech' && senha == 'digital' && seg == 123) {
+            alert(`Usuário autenticado com sucesso`)
+        } else {
+            alert(`Falha na autenticação`)
+        }
+    }
+
+</script>
