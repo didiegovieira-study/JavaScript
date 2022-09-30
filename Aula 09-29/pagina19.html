@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 19 - Resto da divisao</title>
+</head>
+<body>
+    
+    <input placeholder="Qualquer número" id="in_numero" onkeyup="analisar()"> <br><br>
+    <div id="div_analise"></div>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        var numero = Number(in_numero.value)
+
+// o operador % calcula o resto da divisao entre o número da esquerda pelo número da direita
+        if (numero % 2 == 0) {
+            div_analise.innerHTML = 'É par <br>'
+        } else {
+            div_analise.innerHTML = 'É ímpar <br>'
+        }
+
+        if (numero % 7 == 0) {
+            div_analise.innerHTML += 'É múltiplo de 7'
+        } else {
+            div_analise.innerHTML += 'Não é múltiplo de 7'
+        }
+
+        if (numero == '') {
+            div_analise.innerHTML = ''
+        }
+    }
+
+</script>

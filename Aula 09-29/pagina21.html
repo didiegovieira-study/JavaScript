@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 21</title>
+</head>
+<body>
+    
+    <input placeholder="Frase Qualquer" id="in_frase" onkeyup="descrever()"> <br>
+    <div id="div_descricao"></div>
+
+</body>
+</html>
+
+<script>
+
+    function descrever() {
+        var frase = in_frase.value
+
+        var tamanho = frase.length
+
+        var tem_b = frase.indexOf('b') >= 0
+        
+        // frase.toUpperCase() - DEIXA TUDO EM MAIUSCULO
+        // frase.toLowerCase() - DEIXA TUDO EM MINUSCULO
+
+
+
+        div_descricao.innerHTML = `
+            O texto tem ${tamanho} caracteres <br>
+            O texto tem a letra 'b'? ${tem_b} <br>
+            Como ele ficaria em CAIXA ALTA? ${frase.toUpperCase()} <br>
+            Como ele ficaria em caixa baixa? ${frase.toLowerCase()} <br>
+            Se eu trocar todos os 'a' por '@': ${frase.replaceAll("a", "@")} <br>
+        `
+        
+    }
+
+</script>

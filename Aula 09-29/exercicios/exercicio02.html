@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    Qual sua altura: <input placeholder="altura" id="in_altura"> <br><br>
+    <button onclick="resultado()">Analisar para Esportes</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var altura = Number(in_altura.value)
+
+        var piloto = altura < 1.60
+        var velejador = altura < 1.60
+        var jogador = altura > 1.60 && altura < 1.85
+
+        if (piloto) {
+            div_resultado.innerHTML = `<br> Pode tentar ser piloto(a) de corrida`
+        }
+        if (velejador) {
+            div_resultado.innerHTML += `<br> Pode tentar ser velejador(a)`
+        }
+        if (jogador) {
+            div_resultado.innerHTML += `<br> Pode tentar ser jogador de futebol ou handbol`
+        }
+    }
+
+</script>

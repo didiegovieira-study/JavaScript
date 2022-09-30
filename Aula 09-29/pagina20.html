@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 20</title>
+</head>
+<body>
+    
+    <input placeholder="Temperatura" 
+            id="in_temperatura" >
+    <br> <br>
+    <button onclick="analisar()">Analisar</button>
+
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        var temp = Number(in_temperatura.value)
+
+// esta variável só pode ser true ou false
+// portanto o tipo dela booleano (booleano)
+        var agradavel = temp > 23
+
+        if (agradavel) { // perguntando se 'agradavel' é true
+            alert("Temperatura agradável")
+        }
+
+// O operador ! nega ou inverte uma expressão lógica
+        if (!agradavel) {
+            // if (agradavel != true)
+            // if (agradavel == false)
+            alert("Temperatura NÃO ESTÁ agradável")
+        }
+    }
+
+</script>

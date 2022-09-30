@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 01</title>
+</head>
+<body>
+    <input placeholder="Login" id="in_login"> <br>
+    <input placeholder="Senha" id="in_senha"> <br>
+    <button onclick="autenticar()">Autenticar</button>
+    <br>
+    <div id="div_resultado"></div>
+</body>
+</html>
+<script>
+    function autenticar() {
+        div_resultado.innerHTML = ""
+
+        var login_valido = in_login.value == "aidimin"
+        var senha_valida = in_senha.value == "seinha"
+        var autenticado = login_valido && senha_valida
+
+        var cor = "blue"
+        var resultado = "Usuário autenticado com sucesso!"
+
+        if (!autenticado) {
+            resultado = ""
+            if (!login_valido) {
+                cor = "red"
+                resultado = "Seu login está inválido!"
+            }
+            if (!senha_valida) {
+                cor = "red"
+                resultado += "<br>Sua senha está inválida!"
+                if (login_valido) {
+                    alert("Entre em contato com o suporte para recuperar sua senha")
+                }
+            }
+        }
+
+        // div_resultado.innerHTML = 
+        // `<span style="color:${cor}">${resultado}</span>`
+
+        div_resultado.style.color = cor
+        div_resultado.innerHTML = resultado
+    }
+</script>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    <div class="container" style="display: flex; align-items: center; flex-direction: column; margin-top: 150px;">
+        <input placeholder="Coloque sua Idade" id="in_idade" onkeyup="resultado()" style="height: 5vh; width: 9vw;">
+        <p>TOTAL DE PONTOS: <b id="b">0</b></p>
+        <div id="div_resultado">
+            <br> Já passou pela infância: <b>false</b>
+            <br> Já passou pela adolescência: <b>false</b>
+            <br> Já é um idoso: <b>false</b>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var pontos = 0;
+
+    function resultado() {
+        var pontos = 0;
+        div_resultado.innerHTML = ``
+        b.innerHTML = ``
+
+        var idade = in_idade.value
+        var crianca = idade > 12
+        var adolescente = idade >= 18
+        var idoso = idade > 65
+
+        if (idade > 12) {
+
+            pontos += 10
+        }
+        if (idade >= 18) {
+
+            pontos += 20
+        }
+        if (idade > 65) {
+
+            pontos += 50
+        }
+        div_resultado.innerHTML = `<br> Já passou pela infância: <b>${crianca}</b>`
+        div_resultado.innerHTML += `<br> Já passou pela adolescência: <b>${adolescente}</b>`
+        div_resultado.innerHTML += `<br> Já é um idoso: <b>${idoso}</b>`
+        b.innerHTML = `${pontos}`
+    }
+
+</script>

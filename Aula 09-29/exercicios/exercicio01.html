@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    Qual seu login?: <input type="text" id="in_login"> <br>
+    Qual a senha <input type="text" id="in_senha"> <br>
+    <button onclick="resultado()">Entrar</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        div_resultado.innerHTML = ''
+        var acesso_adm = in_login.value == 'aidimin'
+        var acesso_sen = in_senha.value == 'seinha'
+
+        if (acesso_adm && acesso_sen) {
+            div_resultado.innerHTML = `<p style="color: blue;">Usuário autenticado com sucesso!</p>`
+        } else {
+            if (!acesso_adm) {
+                div_resultado.innerHTML = `<br><p style="color: red;">Seu login está inválido!</p>`
+            }
+            if (!acesso_sen) {
+                div_resultado.innerHTML += `<br><p style="color: red;">Sua senha está inválida!</p>`
+                if (acesso_adm) {
+                    alert("Entre em contato com o suporte para recuperar sua senha")
+                }
+            }
+        }
+    }
+
+</script>

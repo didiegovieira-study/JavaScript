@@ -21,14 +21,15 @@
     function resultado() {
         var temp = in_temp.value;
 
-        if (temp == 21 || temp == 24) {
+        if (temp >= 21 && temp <= 24) {
+            
+        } else {
+            alert("Alerta de desconforto!")
             if (temp < 21){
                 alert("As pessoas vão ter hipotermia")
             } else if (temp > 24) {
                 alert("As pessoas vão derreter")
             }
-        } else {
-            alert("Alerta de desconforto!")
         }
     }
 

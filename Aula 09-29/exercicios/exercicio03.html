@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    Qual sua nota: <input id="in_nota"> <br><br>
+    Qual sua frequencia: <input id="in_freq"> <br><br>
+    <button onclick="resultado()">Avaliar</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+
+
+        var nota = Number(in_nota.value)
+        var freq = Number(in_freq.value)
+        var aprovado = nota > 6 && freq > 75
+
+        if (aprovado) {
+            div_resultado.innerHTML = `Parabéns, aprovado(a)!`
+        } else {
+            if (nota < 6) {
+                div_resultado.innerHTML = `<br> Reprovado(a) por nota!`
+            }
+            if (freq < 75) {
+                div_resultado.innerHTML = `<br> Reprovado(a) por frequência!`
+            }
+        }
+
+    }
+
+</script>
