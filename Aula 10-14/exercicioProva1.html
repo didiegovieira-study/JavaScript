@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 1</title>
+</head>
+<body>
+    
+    <h1>Quisque Mirosmar - Controle de Vendas</h1>
+    <div id="divAberturaQuiosque">
+        <h3>---------------Abertura do Quiosque---------------</h3>
+        Entre com a quantidade de Água engarrafada no estoque: <input type="text" id="inAgua"> <br>
+        Entre com a quantidade de Coco fechado no estoque: <input type="text" id="inCoco"> <br>
+        <button onclick="abertura()">Abrir o Quiosque</button>
+    </div>
+    <div id="EstoqueInicial">
+        <h3>---------------Estoque Inicial---------------</h3>
+        <div id="divEstoqueInicialMensagem">
+
+        </div>
+    </div>
+    <div id="divRegistroVenda">
+        <h3>----------Registro das Operações de Venda----------</h3>
+        Entre com a quantidade vendida: <input type="text" id="inVenda"> 
+        Informe o produto vendido: 
+        <select name="" id="selVenda">
+            <option value="">Selecione a Venda</option>
+            <option value="1">Coco Fechado</option>
+            <option value="2">Água Engarrafada</option>
+        </select>
+        <button onclick="registro()">Registrar a Venda</button>
+        <button onclick="venda()" style="background-color: red;">Encerrar o Turno</button>
+        <br> <br>
+        <div id="divRegistroVendaMensagem"></div>
+    </div>
+    
+</body>
+</html>
+
+<script>
+    
+    var agua = 0;
+    var coco = 0;
+    var cocoTemp = 0;
+    var aguaTemp = 0;
+    var vendaTemp = 0;
+    var aguaFixo = 0;
+    var cocoFixo = 0;
+    
+    function abertura() {
+        agua += Number(inAgua.value);
+        coco += Number(inCoco.value);
+        aguaFixo = agua;
+        cocoFixo = coco;
+        divRegistroVendaMensagem.innerHTML = ''
+        divEstoqueInicialMensagem.innerHTML = ''
+
+        if (agua < 100) {
+            divRegistroVendaMensagem.innerHTML += `Com essa quantidade de Água engarrafada não dá para abrir o quisque <br>`
+        } else if (coco < 200) {
+            divRegistroVendaMensagem.innerHTML += `Com essa quantidade de Coco fechado não dá para abrir o quisque <br>`
+        } else {
+            divEstoqueInicialMensagem.innerHTML += `Água Engarrafada: <b>${agua}</b> <br> Coco Fechado: <b>${coco}</b>`
+
+        }
+
+        if (agua >= 100 && agua <= 1000) {
+            divRegistroVendaMensagem.innerHTML += `Engarrafe mais água de coco <br>`
+        }
+
+        if (coco >= 200 && coco <= 2000) {
+            divRegistroVendaMensagem.innerHTML += `Compre mais cocos <br>`
+        }
+        cocoTemp += coco;
+        aguaTemp += agua;
+    }
+
+    var vendaCocoTemp = 0;
+    var vendaAguaTemp = 0;
+
+    function registro() {
+        var select = selVenda.value;
+        var venda = Number(inVenda.value);
+        
+        if (select == 1) {
+            cocoTemp -= venda;
+            divRegistroVendaMensagem.innerHTML += `Com a venda de ${venda} de COCO, o saldo do estoque é de ${cocoTemp} <br>`
+            vendaCocoTemp += venda;
+        } else if (select == 2) {
+            aguaTemp -= venda;
+            divRegistroVendaMensagem.innerHTML += `Com a venda de ${venda} de ÁGUA, o saldo do estoque é de ${aguaTemp} <br>`
+            vendaAguaTemp += venda;
+        }
+
+        vendaTemp += venda;
+    }
+
+    function venda() {
+        var saldoCoco = cocoFixo - vendaCocoTemp;
+        var saldoAgua = aguaFixo - vendaAguaTemp;
+        var saldoVenda = vendaCocoTemp + vendaAguaTemp;
+        var saldoVendaCoco = (vendaCocoTemp * 100) / saldoVenda;
+        var saldoVendaAgua = (vendaAguaTemp * 100) / saldoVenda;
+
+        divRegistroVendaMensagem.innerHTML = ''
+
+        divRegistroVendaMensagem.innerHTML += `
+        <b> Vendas de Água engarrafada </b><br><br>
+
+        Saldo de produto no estoque: <b>${saldoAgua}</b> <br><br>
+
+        Quantidade de vendas: <b>${vendaAguaTemp}</b> <br><br>
+
+        Porcentagem das vendas: <b>${saldoVendaAgua.toFixed(2)}</b> <br><br><br><br>
+
+
+        <b> Vendas de Coco fechado </b><br><br>
+
+        Saldo de produto no estoque: <b>${saldoCoco}</b> <br><br>
+
+        Quantidade de vendas: <b>${vendaCocoTemp}</b> <br><br>
+
+        Porcentagem das vendas: <b>${saldoVendaCoco.toFixed(2)}</b> <br><br>
+        `
+    }
+
+</script>

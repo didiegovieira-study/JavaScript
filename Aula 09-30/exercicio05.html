@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    
+
+
+    <div style="display: flex; align-items: center; justify-content: center; flex-direction: column;">
+        <h1>Pokemon</h1>
+
+        <h3>Primeiro Treinador - Iniciante</h3>
+        <select name="" id="sel_inicial">
+            <option value="">Selecione seu Pokemon</option>
+            <option value="1">Bulbasaur (Planta)</option>
+            <option value="2">Squirtle (Água)</option>
+            <option value="3">Charmander (Fogo)</option>
+        </select>
+
+        <h3>Segundo Treinador - Oponente</h3>
+        <select name="" id="sel_inicial2">
+            <option value="">Selecione seu Pokemon</option>
+            <option value="1">Bulbasaur (Planta)</option>
+            <option value="2">Squirtle (Água)</option>
+            <option value="3">Charmander (Fogo)</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="resultado()">Batalhar!</button>
+
+        <br><br>
+
+        <div id="div_resultado">
+            Vitórias do Iniciante: <b>0</b> / Derrotas do Iniciante: <b>0</b> / Empates: <b>0</b>
+        </div>
+        <div id="div_resultado2"></div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    var vitoria = 0;
+    var derrota = 0;
+    var empate = 0;
+
+    function resultado() {
+        div_resultado.innerHTML = ''
+
+        var i = sel_inicial.value
+        var o = sel_inicial2.value
+
+        if ((i == 1 && o == 2) || (i == 2 && o == 3) || (i == 3 && o == 1)) {
+            vitoria++
+            div_resultado2.innerHTML = '<b>O iniciante venceu!</b>'
+        } else if (i == '' || o == ''){
+        } else if (i == o) {
+            empate++
+            div_resultado2.innerHTML = '<b>A batalha empatou!</b>'
+        } else {
+            derrota++
+            div_resultado2.innerHTML = '<b>O iniciante perdeu!</b>'
+        }
+        div_resultado.innerHTML += `Vitórias do Iniciante: <b>${vitoria}</b> / 
+            Derrotas do Iniciante: <b>${derrota}</b> / Empates: <b>${empate}</b> <br>`
+    }
+
+</script>

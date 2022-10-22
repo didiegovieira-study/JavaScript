@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    Insira o seu login: <input placeholder="Login" id="in_login"> <br>
+    Insira sua senha: <input placeholder="Senha" id="in_senha"> <br>
+    Insira o código de segurança: <input placeholder="Código" id="in_cod"> <br><br>
+    <button onclick="resultado()">Fazer Login</button> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var login = in_login.value == 'SPTECH';
+        var senha = in_senha.value == 'SCHOOL';
+        var cod = in_cod.value == 595
+
+        if ((login && senha) || cod) {
+            div_resultado.innerHTML = `Usuário autenticado com sucesso`
+        } else {
+            div_resultado.innerHTML = `Falha na autenticação`
+        }
+
+    }
+
+</script>

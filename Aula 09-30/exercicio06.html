@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    Insira o nome do produto que comprará: <input id="in_produto"> <br><br>
+    Insira o preço original do produto: <input id="in_preco"> <br><br>
+    Insira o cupom de desconto: <input id="in_cupom"> <br><br>
+    <button onclick="resultado()">Aplicar Desconto</button> <br><br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado(){
+        var prod = (in_produto.value).toLowerCase();
+        var preco = Number(in_preco.value);
+        var desc = (in_cupom.value).toUpperCase().replaceAll(" ", "_");
+
+        var prod_geral = (prod == 'tênis' || prod == 'livros' || prod == 'material escolar')
+        var prod_tecno = (prod == 'celular' || prod == 'notebook' || prod == 'tablet')
+
+        if (prod == '') {
+            alert('Insira um produto para prosseguir!')
+        } else if (preco == '') {
+            alert('Insira um preço para prosseguir!')
+        } else if (desc == '') {
+            alert('Insira um cupom para prosseguir!')
+        } else {
+            if (prod_geral) {
+                if (desc == 'GERAL_10') {
+                    var preco = preco - (preco * 0.1)
+                    div_resultado.innerHTML = `Cupom para produtos em geral aplicado! Preço final será R$${preco}`
+                } else {
+                    div_resultado.innerHTML = `Cupom não aplicado! Preencha os campos e tente novamente!`
+                }
+            } else if (prod_tecno) {
+                if (desc == 'TECH_19') {
+                    var preco = preco - (preco * 0.19)
+                    div_resultado.innerHTML = `Cupom para produtos tecnológicos foi aplicado! Preço final será R$${preco}`
+                } else {
+                    div_resultado.innerHTML = `Cupom não aplicado! Preencha os campos e tente novamente!`
+                }
+            } else {
+                div_resultado.innerHTML = `Cupom não aplicado! Preencha os campos e tente novamente!`
+            }
+        } 
+    }
+</script>

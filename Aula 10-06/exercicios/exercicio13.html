@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    
+    <h1>Tabuada</h1>
+    <select name="" id="selTabuada">
+        <option value="">- Selecione um Num -</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select> <br>
+    Até qual numero a tabuada deve ser escrita?: <input type="text" id="inNum"> <br>
+    <button onclick="enter()">Ver Tabuada</button> <br>
+    <div id="divResultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function enter() {
+        var tabuada = Number(selTabuada.value);
+        var num = Number(inNum.value);
+        var cont = 0;
+
+        while (cont <= num) {
+            if (cont % 2 == 0) {
+                var color = 'blue';
+            } else {
+                var color = 'red';
+            }
+            divResultado.innerHTML += `<p style="color: ${color};">${tabuada} * ${cont} = ${tabuada*cont}</p>`
+            cont++
+        }
+    }
+
+</script>

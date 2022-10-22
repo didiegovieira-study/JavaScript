@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+    
+    Quantas voltas o carro dará?: <input type="text" id="inVolta"> <br><br>
+    <button onclick="enter()">Iniciar Corrida</button> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var cont = 1;
+        var volta = Number(inVolta.value);
+
+        while (cont <= volta) {
+            divResultado.innerHTML += `Carro dando a ${cont}° volta. <br>`
+            cont++
+            if (cont == volta){
+                divResultado.innerHTML += `Corrida Finalizada`
+            }
+        }
+    }
+
+</script>

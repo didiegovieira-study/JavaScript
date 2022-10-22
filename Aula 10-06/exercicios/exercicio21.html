@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 21</title>
+</head>
+<body>
+    
+    <h1>Simulador de Trajeto</h1>
+    Quantos ônibus você pega: <input type="text" id="inOnibus"> <br><br>
+    Quantos trens precisa pegar: <input type="text" id="inTrem"> <br><br>
+    Quantos metrôs precisa pegar: <input type="text" id="inMetro"> <br><br>
+    <button onclick="enter()">#Partiu Trajeto</button> <br>
+    <div id="divResultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function enter() {
+        var onibus = Number(inOnibus.value);
+        var trem = Number(inTrem.value);
+        var metro = Number(inMetro.value);
+        var cont = 1;
+        var frase = ''
+
+        divResultado.innerHTML = ``
+        
+        if (onibus == 0 && trem == 0 && metro == 0) {
+            divResultado.innerHTML = 'OPS... Parece que esse veio de helicóptero!!!  Kkk'
+        } else {
+            if (onibus == 0) {
+                divResultado.innerHTML += `Não precisou pegar o ONIBUS <br>`
+            } else {
+                while (cont <= onibus) {
+                    if (cont == 2) {
+                        frase = 'Começando a Cansar'
+                    } else if (cont == 3) {
+                        frase = 'Já Cansado'
+                    } 
+                    divResultado.innerHTML += `<div style="color: red;">Pegando o ${cont}º buzão. ${frase}</div>`
+                    cont++
+                }
+            }
+
+            frase = ''
+            cont = 1;
+
+            if (trem == 0) {
+                divResultado.innerHTML += 'Não precisou pegar o TREM <br>'
+            } else {
+                while (cont <= trem) {
+                    if (cont == 2) {
+                        frase = 'Começando a Cansar'
+                    } else if (cont == 3) {
+                        frase = 'Já Cansado'
+                    }
+                    divResultado.innerHTML += `<div style="color: green;">Pegando o ${cont}º trem. ${frase}</div>`
+                    cont++
+                }
+            }
+              
+            frase = ''
+            cont = 1;
+            
+            if (metro == 0) {
+                divResultado.innerHTML += 'Não precisou pegar o METRO <br>'
+            } else {
+                while (cont <= metro) {
+                    if (cont == 2) {
+                        frase = 'Começando a Cansar'
+                    } else if (cont == 3) {
+                        frase = 'Já Cansado'
+                    }
+                    divResultado.innerHTML += `<div style="color: blue;">Pegando o ${cont}º trem. ${frase}</div>`
+                    cont++
+                }
+
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 22</title>
+</head>
+<body>
+
+
+    <button onclick="enter()">Curto 3 e 5!</button> <br> <br>
+
+    <div id="divResultado"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var cont = 1;
+        
+        while (cont <= 100) {
+            var mult3 = cont % 3 == 0;
+            var mult5 = cont % 5 == 0;
+            
+            if (mult3 && mult5) {
+                divResultado.innerHTML += `É TRI! É PENTA! <br>`
+            } else if (mult3) {
+                divResultado.innerHTML += `É TRI! <br>`
+            } else if (mult5) {
+                divResultado.innerHTML += `É PENTA! <br>`
+            } else {
+                divResultado.innerHTML += `${cont} <br>`
+            }
+            cont++
+
+        }
+    }
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 15</title>
+</head>
+<body>
+    
+    <h1>Sua idade</h1>
+    Insira sua idade: <input type="text" id="inIdade" onkeyup="enter()"> <br><br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var idade = Number(inIdade.value) + 1;
+        var cont = 0;
+
+        divResultado.innerHTML = ''
+
+        while (cont < idade) {
+            if (cont >= 0 && cont <= 4 ) {
+                var text = '(Primeira Infância)'
+            } else if (cont > 4 && cont <= 6) {
+                var text = '(Pré-escolar)'
+            } else if (cont > 6 && cont <= 10) {
+                var text = '(Segunda Infância)'
+            } else if (cont > 10 && cont <= 18) {
+                var text = '(Adolescência)'
+            } else if (cont > 18 && cont <= 50) {
+                var text = '(Adulto)'
+            } else if (cont > 50 && cont <= 100) {
+                var text = '(Melhor idade)'
+            } else if (cont > 100) {
+                var text = '(Matusalém)'
+            } 
+            divResultado.innerHTML += `${cont} anos ${text} <br>`
+            cont++
+        }
+        divResultado.innerHTML += `Idade Informada: ${idade}`
+    }
+
+</script>

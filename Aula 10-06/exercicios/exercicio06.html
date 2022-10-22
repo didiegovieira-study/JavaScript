@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    Qual a pessoa que você mais ama na vida?: <input type="text" id="inAma"> <br><br>
+    Quanto você ama essa pessoa?: <input type="text" id="inQuant"> <br><br>
+    <button onclick="enter()">Expressar Amor</button> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var ama = inAma.value;
+        var quant = Number(inQuant.value);
+        var cont = 0;
+
+        while (cont < quant) {
+            divResultado.innerHTML += `${ama}, eu te amo! Sempre lembre disso! <br>`
+            cont++
+        }
+    }
+
+</script>

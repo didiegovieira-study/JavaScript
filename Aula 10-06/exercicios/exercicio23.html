@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 23</title>
+</head>
+<body>
+    
+    <h1>Planejamento Financeiro do Marco</h1>
+
+    Insira quanto já tem guardado: <input type="text" id="inGuardo"> <br><br>
+    Insira quanto será poupado a cada mês: <input type="text" id="inPoupado"> <br><br>
+    Insira a quantidade de meses: <input type="text" id="inMeses"> <br><br>
+    <button onclick="enter()">Vamos Poupar</button> <br> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        divResultado.innerHTML = ''
+
+        var guardo = Number(inGuardo.value);
+        var guardoInicial = Number(inGuardo.value);
+        var poupado = Number(inPoupado.value);
+        var meses = Number(inMeses.value);
+        var total = guardo + poupado
+        var cont = 1;
+
+        if (poupado <= 0) {
+            alert('O valor poupado tem que ser maior que zero')
+        } else if (meses >= 6 && meses <= 20) {
+            while (cont <= meses) {
+                total = guardo + poupado
+                divResultado.innerHTML += `Marco tinha R$${guardo}, depois do depósito do ${cont}º mês ele ficou com R$${total} <br>`
+                guardo = total
+                cont++
+            }
+            divResultado.innerHTML += `<br> Você começou com R$${guardoInicial} <br>
+            Durante os ${meses} você poupou ${guardo - guardoInicial} <br>
+            E agora você tem: R$${total}`
+        } else {
+            alert('Meses tem que estar entre 6 a 20.')
+        }
+    }
+    
+</script>

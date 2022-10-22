@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    
+    Quantos títulos mundiais seu time tem?: <input type="text" id="inTitulo"> <br><br>
+    <button onclick="enter()">Ver troféus de mundiais FIFA</button> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        divResultado.innerHTML = ''
+        var num = Number(inTitulo.value);
+        var cont = 0;
+
+        while (cont < num) {
+            divResultado.innerHTML += `<img src="https://sep-bucket-prod.s3.amazonaws.com/wp-content/uploads/2019/08/29144405/taca-mundial-51.png" alt="">`
+            cont++
+        }
+    }
+
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 24</title>
+</head>
+<body>
+    
+    <h2>Repetindo Mantras</h2>
+
+    <button onclick="repetir5()">Repetir 5</button>
+    <br> <br>
+    <input placeholder="Repetições" id="in_repeticoes">
+    <button onclick="repetir()">Repetir N Vezes</button>
+
+    <div id="div_repeticoes"></div>
+
+</body>
+</html>
+
+<script>
+
+    function repetir5() {
+        div_repeticoes.innerHTML = ''
+        var mensagem = ''
+
+        // 1a. parte -> setup ou inicialização. Só é executado 1x
+        // 2a. parte -> condiçao de repetiçao (expressao logica)
+        // 3a. parte -> ultinha linha virtual do for. é executada após todas as linhas do for
+
+        for(var contador = 0 ; contador < 5 ; contador++) {
+            mensagem += 'Oooi '
+            div_repeticoes.innerHTML += `Paz, justiça e liberdade ${mensagem}<br>`
+        } 
+    }
+
+    function nao_me_execute() {
+        /*
+        As 3 partes do for sao opcionais
+        exemplo:
+        */
+
+        // eemplo sem a 1a. parte
+        var contador = Number(in_blablabla.value);
+        for (;contador < 10; contador++) {
+
+        }
+
+        // exemplo sem a 3a. parte
+        for (var contador = 0; contador < 10;) {
+            if (teste_qq_coisa){
+                contador++
+            } else {
+                contador--
+            }
+        }
+        // exemplo de loop infinito
+        for (;;){
+    
+        }
+    }
+
+    function repetir() {
+        div_repeticoes.innerHTML = ''
+        var vezes = Number(in_repeticoes.value);
+
+        for (var contador = 0; contador < vezes;) {
+            contador += 1
+            div_repeticoes.innerHTML += `${contador} - KASDMSAKODKOSA <br>`
+        }
+    }
+
+</script>

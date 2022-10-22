@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    
+    <h1>Ghost, do outro lado da vida</h1>
+    Qual a quantidade de elefantes?: <input type="text" id="inEle"> <br><br>
+    <button onclick="enter()">Atazanar a Médium</button> <br>
+    <div id="divResultado">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var ele = Number(inEle.value);
+        var cont = 2;
+        var text = 'incomodam'
+
+        while (cont < ele) {
+            text += ', incomodam'
+
+            divResultado.innerHTML += `1 elefante incomoda muita gente! <br>
+            ${cont} elefantes, ${text}, muito mais! <br>`
+            
+            cont++
+        }
+    }
+
+</script>

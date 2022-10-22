@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+<body>
+    
+    <select name="" id="sel_arroz">
+        <option value="">- Selecione -</option>
+        <option value="1">Integral</option>
+        <option value="2">Branco</option>
+    </select>
+
+    Qual o tempo de cozimento?: <input type="text" id="in_temp">
+    Qual a quantidade de sal em gramas?: <input type="text" id="in_grama">
+
+    <button onclick="resultado()">Avaliar Arroz</button>
+
+    <div id="div_resultado"></div>
+    <img src="" alt="" id="img" style="width:500px;">
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var arroz = sel_arroz.value
+        var temp = Number(in_temp.value)
+        var grama = Number(in_grama.value).toFixed(2)
+
+        if ((arroz == 2 && temp == 10 && grama <= 10) || (arroz == 1 && temp == 20 && grama <= 15)) {
+            div_resultado.innerHTML = `Seu arroz está perfeito`
+            
+            if (arroz == 2) {
+                img.src = `https://img.itdg.com.br/tdg/images/recipes/000/166/751/357546/357546_original.jpg?mode=crop&width=710&height=400`
+            } else if (arroz == 1) {
+                img.src = `https://www.cozinhatecnica.com/wp-content/uploads/2019/05/arroz-integral-soltinho.jpg`
+            }
+        } else {
+            div_resultado.innerHTML = `Seu arroz não está perfeito`
+            img.src = `https://noticiasdatv.uol.com.br/media/uploads/erick-jacquin-freezer-bronca-pesadelo-na-cozinha-reproducao-band-min.jpg`
+        }
+    }
+
+</script>

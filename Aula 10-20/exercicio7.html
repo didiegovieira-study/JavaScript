@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    
+    <input placeholder="Insira o limite inferior" id="LimiteMin"> <br>
+    <input placeholder="Insira o limite superior" id="LimiteMax"> <br>
+    <input placeholder="Insira um número para divisibilidade" id="Divisor"> <br>
+    <button onclick="resultado()">Contar</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+    
+
+    function resultado() {
+        var limiteMin = Number(LimiteMin.value);
+        var limiteMax = Number(LimiteMax.value);
+        var divisivel = Number(Divisor.value);
+
+        divMensagem.innerHTML = ''
+
+        if (limiteMin > 1) {
+            if (limiteMax < 100) {
+                if (divisivel % 3 == 0 || divisivel % 10 == 0) {
+                    for (var contador = limiteMin; contador <= limiteMax; contador++) {
+                        if (divisivel % 3 == 0) {
+                            if (contador % 3 == 0){
+                                divMensagem.innerHTML += `${contador} <br>`
+                            }
+                        }
+                        if (divisivel % 10 == 0) {
+                            if (contador % 10 == 0) {
+                                divMensagem.innerHTML += `${contador} <br>`
+                            }
+                        }
+                    }
+                } else {
+                    alert('O número de divisor deve ser divisivel por 3 ou 10')
+                }
+            } else {
+                alert('O número de limite deve ser menor que 100')
+            }
+        } else {
+            alert('O número de limite deve ser maior que 1')
+        }
+    }
+
+
+</script>

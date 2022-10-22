@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 19</title>
+</head>
+<body>
+    
+    <h1>Simulador de Trajeto</h1>
+    Quantos ônibus você pega: <input type="text" id="inOnibus"> <br><br>
+    Quantos trens precisa pegar: <input type="text" id="inTrem"> <br><br>
+    Quantos metrôs precisa pegar: <input type="text" id="inMetro"> <br><br>
+    <button onclick="enter()">#Partiu Trajeto</button> <br>
+    <div id="divResultado">
+    </div>
+
+</body>
+</html>
+
+<script>
+    
+    function enter() {
+        var onibus = Number(inOnibus.value);
+        var trem = Number(inTrem.value);
+        var metro = Number(inMetro.value);
+        var cont = 1;
+
+        divResultado.innerHTML = ``
+        
+        while (cont <= onibus) {
+            divResultado.innerHTML += `<div style="color: red;">Pegando o ${cont}º buzão</div>`
+            cont++
+        }
+        cont = 1;
+        while (cont <= trem) {
+            divResultado.innerHTML += `<div style="color: green;">Pegando o ${cont}º trem</div>`
+            cont++
+        }
+        cont = 1;
+        while (cont <= metro) {
+            divResultado.innerHTML += `<div style="color: blue;">Pegando o ${cont}º trem</div>`
+            cont++
+        }
+        cont = 1;
+    }
+
+</script>

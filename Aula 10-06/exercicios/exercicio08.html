@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    Insira um número de 0 a 200: <input type="text" id="inNum"> <br><br>
+    <button onclick="enter()">Viva o 7!</button>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+    
+    function enter() {
+        var num = Number(inNum.value);
+        var cont = 0;
+
+        if (num >= 0 && num <= 200) {
+            while (cont < num) {
+                cont % 7 == 0;
+                divResultado.innerHTML += `${cont} <br>`
+                cont+=7
+            }
+        } else {
+            divResultado.innerHTML = `Número Invalido`
+        }
+
+    }
+
+</script>

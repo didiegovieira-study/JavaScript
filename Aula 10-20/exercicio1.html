@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    <input placeholder="Diga algo" id="inMensagem">
+    <button onclick="resultado()">Diga algo sobre a quarentena</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        divMensagem.innerHTML = ''
+        var mensagem = inMensagem.value
+
+        for (var contador = 0; contador < 7; contador++) {
+            divMensagem.innerHTML = `${mensagem}`
+        }
+    }
+
+</script>

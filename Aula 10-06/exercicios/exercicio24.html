@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 24</title>
+</head>
+<body>
+    
+    <h1>Benedito e os Numeros</h1>
+
+    Insira o numero minimo para analise: <input type="text" id="inMin"> <br><br>
+    Insira o numero maximo para analise: <input type="text" id="inMax"> <br><br>
+    <button onclick="enter()">Analisar</button> <br><br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var min = Number(inMin.value);
+        var max = Number(inMax.value);
+        var cont = 1;
+
+        divResultado.innerHTML = ''
+        
+        if (min > 0 && max > min) {
+            cont = min
+            while (cont <= max) {
+                var frase = ''
+                
+                if (cont % 2 == 0) {
+                    frase = '2'
+                    if (cont % 3 == 0) {
+                        frase += ', 3'
+                    }
+                    if (cont % 5 == 0) {
+                        frase += ', 5'
+                    }
+                    if (cont % 7 == 0) {
+                        frase += ', 7'
+                    }
+                    if (cont % 11 == 0) {
+                        frase += ', 11'
+                    }
+                    if (cont % 13 == 0) {
+                        frase += ', 13'
+                    }
+                    divResultado.innerHTML += `O número ${cont} é divisível por ${frase} <br>`
+                } else {
+                    divResultado.innerHTML += `${cont} <br>`
+                }
+                cont++ 
+            }
+        } else {
+            alert('Intervalo de Números Inválido')
+        }
+    }
+
+</script>

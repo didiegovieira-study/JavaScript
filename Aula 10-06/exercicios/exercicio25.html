@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 25</title>
+</head>
+<body>
+    
+    <h1>Planejamento Financeiro do Marco</h1>
+
+    Insira quanto já tem guardado: <input type="text" id="inGuardo"> <br><br>
+    Insira quanto será poupado a cada mês: <input type="text" id="inPoupado"> <br><br>
+    Insira a quantidade de meses: <input type="text" id="inMeses"> <br><br>
+    Insira o percentual de juros mensal: <input type="text" id="inJuros"> <br><br>
+    <button onclick="enter()">Vamos Poupar</button> <br> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        divResultado.innerHTML = ''
+
+        var guardoInicial = Number(inGuardo.value);
+        var guardo = guardoInicial
+        var poupado = Number(inPoupado.value);
+        var meses = Number(inMeses.value);
+        var juros = Number(inJuros.value).toFixed(2).replaceAll(',', '.');
+        var total = guardo + poupado
+        var cont = 1;
+        var jurosguardado = 0;
+        
+
+        if (poupado <= 0) {
+            alert('O valor poupado tem que ser maior que zero')
+        } else if (meses > 10) {
+            if (juros >= 0.5 && juros <= 2) {
+                while (cont <= meses) {
+                    jurosguardado += guardo * (juros / 100);
+                    total = guardo + poupado;
+                    divResultado.innerHTML += `Mês ${cont} - saldo inicial = R$${guardo.toFixed(2)} saldo final = ${total.toFixed(2)} <br>`;
+                    guardo = total;
+                    cont++
+                    if (cont <= meses) {
+                        guardo += guardo * (juros / 100);
+                    }
+                }
+                divResultado.innerHTML += `<br> Você começou com R$${guardoInicial.toFixed(2)} <br>
+                Durante os ${meses} você poupou ${(guardo - guardoInicial).toFixed(2)} <br>
+                Somatória de juros: ${jurosguardado.toFixed(2)} <br>
+                E agora você tem: R$${total.toFixed(2)} <br>
+                `
+            } else {
+                alert('Percentual de juros tem que estar entre meio e dois.')
+            }
+        } else {
+            alert('Meses tem que ser maior que 10.')
+        }
+    }
+    
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <input placeholder="Insira um número" id="inLimite"> <br>
+    <button onclick="resultado()">Contar</button> <br><br>
+    <div id="divMensagem"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var limite = Number(inLimite.value);
+
+        divMensagem.innerHTML = ''
+
+        if (limite < 100) {
+            for (var contador = 5; contador <= limite; contador++) {
+                divMensagem.innerHTML += `${contador} <br>`
+            }
+        } else {
+            alert('O número inserido tem que ser menor que 100')
+        }
+            
+    }
+
+</script>

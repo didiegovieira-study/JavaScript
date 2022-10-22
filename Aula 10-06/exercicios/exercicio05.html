@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    
+    <button onclick="enter()">Números cabalísticos</button>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var cont = 0;
+        
+        while (cont <= 30) {
+            var caba = (cont == 3 || cont == 4 || cont == 7 || cont == 10 || cont == 12)
+            if (!caba) {
+                divResultado.innerHTML += `${cont} <br>`
+            }
+            cont++
+        }
+    }
+
+</script>

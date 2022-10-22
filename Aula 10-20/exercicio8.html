@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    <input placeholder="Informe quantas coco-cola já bebeu na vida" id="inCoca"> <br>
+    <button onclick="resultado()">Ver a Quantidade</button> <br><br>
+    <div id="divMensagem"></div>
+    <img src="E:\1o Semestre\Algoritmos\Aula 10-20\exercicio8.html" alt="">
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var coca = Number(inCoca.value);
+
+        divMensagem.innerHTML = ``
+        var img = '<img src="E:\1o Semestre\Algoritmos\Aula 10-20\exercicio8.html" alt="">'
+
+        for(var cont = 0; cont < coca; cont++){
+            divMensagem.innerHTML += `${img}  `
+        }
+    }
+
+</script>

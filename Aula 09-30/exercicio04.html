@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    Insira sua nota: <input placeholder="Nota" id="in_nota"> <br> <br>
+    Insira sua frequência: <input placeholder="Frequência" id="in_freq"> <br> <br>
+    <button onclick="resultado()">Analisar Aluno</button> <br> <br>
+    <div id="div_resultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        div_resultado.innerHTML = ''
+
+        var nota = Number(in_nota.value);
+        var freq = Number(in_freq.value);
+
+        if (nota < 0 || nota > 10) {
+            div_resultado.innerHTML = `Onde já se viu nota <0 ou >10?!`
+        } else if (freq < 0 || freq > 100) {
+            div_resultado.innerHTML = `Onde já se viu frequência <0 ou >100?!`
+        } else {
+            if (nota >= 0 && nota < 6) {
+                div_resultado.innerHTML = `Aluno ficou abaixo da média`
+            } else if (nota >= 6 && nota <= 8) {
+                div_resultado.innerHTML = `Aluno ficou da média`
+            } else {
+                div_resultado.innerHTML = `Aluno acima da média`
+            }
+
+            if (freq < 75) {
+                div_resultado.innerHTML += `<br> Aluno reprovado por frequência`
+            } else {
+                div_resultado.innerHTML += `<br> Aluno aprovado por frequência`
+            }
+        }
+    }
+
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 14</title>
+</head>
+<body>
+    
+    De quantos em quantos dias você faz musculação?: <input type="text" id="inQuant"> <br><br>
+    <button onclick="enter()">Exibir Rotina Mensal</button> <br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var cont = 0;
+        var quant = Number(inQuant.value);
+
+        while (cont <= 30) {
+            if (cont % quant == 0) {
+                divResultado.innerHTML += `Dia ${cont} - Musculação <br>`
+            } else {
+                divResultado.innerHTML += `Dia ${cont} - Comer, dormir etc <br>`
+            }
+            cont++
+        }
+    }
+
+</script>

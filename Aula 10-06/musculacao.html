@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira quantos dias dias voce treina: <input type="text" id="inDia"> <br><br>
+    <button onclick="enter()">Musculacao</button> <br>
+    <div id="divResultado"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function enter() {
+        var dia = Number(inDia.value);
+        var cont = 1;
+
+        while (cont < 31) {
+            if (cont % dia == 1) {
+                divResultado.innerHTML += `Dia ${cont} - Musculacao <br>`
+            } else {
+                divResultado.innerHTML += `Dia ${cont} - Descanso <br>`
+            }
+            cont++
+        }
+    }
+
+</script>

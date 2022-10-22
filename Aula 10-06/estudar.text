@@ -1,0 +1,7 @@
+VAR -  pode ser editado globalmente
+
+CONST - variavel que nao pode ser editada
+
+LET - criada apenas na funcao, cria e morre la
+
+PESQUISAR
