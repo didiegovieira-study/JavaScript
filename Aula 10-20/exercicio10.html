@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    
+    <input placeholder="Informe quantos depósitos fez no banco" id="inDeposito"> <br>
+    <input placeholder="Informe o valor do depósito mensal" id="inValor"> <br>
+    <button onclick="resultado()">Acompanhar Grana</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var dep = Number(inDeposito.value);
+        var val = Number(inValor.value);
+
+        for(var cont = 1; cont <= dep; cont++) {
+            divMensagem.innerHTML += `${cont}º Mês: R$ ${val*cont} <br>`
+            if (cont == dep) {
+                divMensagem.innerHTML += `Total guardado: R$${val*cont}.`
+            }
+        }
+    }
+
+</script>

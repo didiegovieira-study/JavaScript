@@ -10,8 +10,9 @@
     
     <input placeholder="Informe quantas coco-cola já bebeu na vida" id="inCoca"> <br>
     <button onclick="resultado()">Ver a Quantidade</button> <br><br>
-    <div id="divMensagem"></div>
-    <img src="E:\1o Semestre\Algoritmos\Aula 10-20\exercicio8.html" alt="">
+    <div id="divMensagem">
+        
+    </div>
 
 </body>
 </html>
@@ -22,10 +23,10 @@
         var coca = Number(inCoca.value);
 
         divMensagem.innerHTML = ``
-        var img = '<img src="E:\1o Semestre\Algoritmos\Aula 10-20\exercicio8.html" alt="">'
+        var img = `https://www.designi.com.br/images/preview/10001675.jpg`
 
         for(var cont = 0; cont < coca; cont++){
-            divMensagem.innerHTML += `${img}  `
+            divMensagem.innerHTML += `<img src="https://imagensemoldes.com.br/wp-content/uploads/2020/05/Pet-2-Litros-Coca-Cola-PNG.png"; width="200px;" >  `
         }
     }
 

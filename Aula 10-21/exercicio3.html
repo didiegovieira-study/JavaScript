@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Jogar Dado</button> <br><br>
+    <img src="" id="imgDado" width="150px">
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = (1+ Math.random() * 5).toFixed(0)
+    
+        if (sort == 1) {
+            imgDado.src = `https://w7.pngwing.com/pngs/604/326/png-transparent-dice-dice-1-image-file-formats-rectangle-dice.png`
+        } else if (sort == 2) {
+            imgDado.src = `https://w7.pngwing.com/pngs/421/35/png-transparent-material-rectangle-font-dice-1-rectangle-material-dice-1.png`
+        } else if (sort == 3) {
+            imgDado.src = `http://www.i2clipart.com/cliparts/a/9/e/5/clipart-dado-3-256x256-a9e5.png`
+        } else if (sort == 4) {
+            imgDado.src = `https://openclipart.org/image/800px/96097`
+        } else if (sort == 5) {
+            imgDado.src = `http://www.i2clipart.com/cliparts/2/3/3/b/clipart-dado-5-256x256-233b.png`
+        } else if (sort == 6) {
+            imgDado.src = `https://png.vector.me/files/images/3/2/323082/dado_6_preview`
+        }
+    }
+
+</script>

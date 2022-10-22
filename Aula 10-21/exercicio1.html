@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Sortear</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = Math.random().toFixed(2)
+        divMensagem.innerHTML = ``
+        divMensagem.innerHTML = `Numero sorteado ${sort} <br>`
+
+        if (sort > 0.5) {
+            divMensagem.innerHTML += `Eu arredondaria para 1`
+        } else {
+            divMensagem.innerHTML += `Eu arredondaria para 0`
+        }
+    }
+
+</script>

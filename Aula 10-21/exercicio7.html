@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Quero um Cabalístico</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = parseInt(1 + Math.random() * 14);
+        var cabalistico = (sort == 3 || sort == 4 || sort == 7 || sort == 10 || sort == 12);
+
+        divMensagem.innerHTML = `O número é: ${sort} <br>`
+        if (cabalistico) {
+            divMensagem.innerHTML += `Eu S2 números cabalísticos!`
+        } else {
+            divMensagem.innerHTML += `Ah, me dá um número bom na próxima!`
+        }
+    }
+
+</script>

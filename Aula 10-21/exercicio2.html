@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Sortear Time</button> <br><br>
+    <img src="" id="imgTime" width="150px">
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = Math.random().toFixed(2)
+
+        if (sort > 0) {
+            imgTime.src = `https://logodownload.org/wp-content/uploads/2015/05/palmeiras-logo-3.png`
+        } if (sort > 0.4) {
+            imgTime.src = `https://upload.wikimedia.org/wikipedia/pt/4/4b/S%C3%A3o_Paulo_Futebol_Clube.png`
+        } if (sort > 0.6) {
+            imgTime.src = `https://logodownload.org/wp-content/uploads/2017/02/santos-logo-escudo.png`
+        } if (sort > 0.8) {
+            imgTime.src = `https://i1.wp.com/dreamleaguesoccer.com.br/wp-content/uploads/2016/11/escudo-Corinthians.png?fit=512%2C512&ssl=1`
+        }
+    }
+
+</script>

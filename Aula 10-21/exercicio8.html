@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 08</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Gerar uma nota de aluno entre 0 e 10</button> <br><br>
+    <div id="divMensagem"></div> <br><br>
+    <button onclick="sortear1()">Gerar uma frequência de aluno entre 0 e 100</button> <br><br>
+    <div id="divMensagem1"></div> <br><br>
+    <button onclick="aprovar()">Aprovado?</button> <br><br>
+    <div id="divMensagem2"></div> <br><br>
+
+</body>
+</html>
+
+<script>
+
+    var nota = 0;
+    var freq = 0;
+
+    function sortear() {
+        var sort = parseInt(Math.random() * 10);
+        nota += sort
+
+        divMensagem.innerHTML = `Sua nota é: <b>${nota}</b>`
+    }
+
+    function sortear1() {
+        var sort = parseInt(Math.random() * 100);
+        freq += sort
+
+        divMensagem1.innerHTML = `Sua frequência é: <b>${freq}</b>`
+    }
+
+    function aprovar() {
+        
+        if (nota >= 6 && freq >= 75) {
+            divMensagem2.innerHTML = `<b>Aprovado!!</b>`
+        } else {
+            divMensagem2.innerHTML = `<b>Reprovado!!</b>`
+        }
+
+    }
+
+</script>

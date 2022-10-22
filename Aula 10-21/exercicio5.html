@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 05</title>
+</head>
+<body>
+    
+    <h1>Jo Ken Po (Pedra, Papel e Tesoura)</h1>
+    <button onclick="sortear()">Jogar</button> <br><br>
+    <div id="divMensagem"></div> <br>
+    <img src="" id="imgJogo" width="200px">
+
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = (Math.random() * 3).toFixed(0)
+    
+        if (sort == 1) {
+            divMensagem.innerHTML = `Pedra`
+            imgJogo.src = `https://jokenpo-lime.vercel.app/pedra.png`
+        } else if (sort == 2) {
+            divMensagem.innerHTML = `Papel`
+            imgJogo.src = `https://jokenpo-lime.vercel.app/papel.png`
+        } else if (sort == 3) {
+            divMensagem.innerHTML = `Tesoura`
+            imgJogo.src = `https://jokenpo-lime.vercel.app/tesoura.png`
+        }
+    }
+
+</script>
