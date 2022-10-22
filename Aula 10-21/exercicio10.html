@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    
+    <button onclick="sortear()">Jogador 1 jogar dadinho</button> <br><br>
+    <div id="divMensagem"></div> <br>
+    <button onclick="sortear2()">Jogador 2 jogar dadinho</button> <br><br>
+    <div id="divMensagem2"></div> <br>
+
+
+</body>
+</html>
+
+<script>
+
+    var sort1 = 0;
+    var sort2 = 0;
+
+    function sortear() {
+        divMensagem.innerHTML = '';
+
+        sort1 = parseInt(1 + Math.random() * (6+1-1));
+
+        divMensagem.innerHTML = `Jogador número 1 jogou: <b>${sort1}</b>`
+    }
+
+    function sortear2() {
+        divMensagem2.innerHTML = '';
+
+        sort2 = parseInt(1 + Math.random() * (6+1-1));
+
+        divMensagem2.innerHTML = `Jogador número 2 jogou: <b>${sort2}</b>`
+
+        if (sort1 > sort2) {
+            divMensagem2.innerHTML += `<b><br><br> Jogador 1 ganhou!!<b>`
+        } else if (sort1 < sort2) {
+            divMensagem2.innerHTML += `<b><br><br> Jogador 2 ganhou!!<b>`
+        } else {
+            divMensagem2.innerHTML += `<b><br><br> Empatou!!!!<b>`
+        }
+
+    }
+
+</script>

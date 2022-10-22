@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    
+    <h1>Pedra, Papel e Tesoura</h1>
+    <button onclick="sortear()">Jogar</button> <br><br>
+    <div id="divMensagem"></div> <br>
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort1 = parseInt(1 + Math.random() * (3+1-1));
+        var sort2 = parseInt(1 + Math.random() * (3+1-1));
+
+        var pedra = `<img src="https://jokenpo-lime.vercel.app/pedra.png" width="150px">`
+        var papel = `<img src="https://jokenpo-lime.vercel.app/papel.png" width="150px">`
+        var tesoura = `<img src="https://jokenpo-lime.vercel.app/tesoura.png" width="150px">`
+
+        var frase = ''
+        // Papel = 1, Pedra = 2, Tesoura = 3
+
+        if (sort1 == 1 && sort2 == 2) {
+            frase = `${papel}${pedra} <br><br> <b>O jogador 1 venceu, pois papel cobre a pedra</b>`
+        } else if (sort1 == 2 && sort2 == 3) {
+            frase = `${pedra}${tesoura} <br><br> <b> O jogador 1 venceu, pois pedra quebra a tesoura`
+        } else if (sort1 == 3 && sort2 == 1) {
+            frase = `${tesoura}${papel} <br><br> O jogador 1 venceu, pois tesoura corta o papel`
+        } else if (sort2 == 1 && sort1 == 2) {
+            frase = `${pedra}${papel} <br><br> <b>O jogador 2 venceu, pois papel cobre a pedra</b>`
+        } else if (sort2 == 2 && sort1 == 3) {
+            frase = `${tesoura}${pedra} <br><br> <b> O jogador 2 venceu, pois pedra quebra a tesoura`
+        } else if (sort2 == 3 && sort1 == 1) {
+            frase = `${papel}${tesoura} <br><br> O jogador 2 venceu, pois tesoura corta o papel`
+        } else {
+            frase = `<b>EMPATE! Jogue novamente!</b>`
+        }
+
+        divMensagem.innerHTML = `<b>${frase}</b>`
+    }
+
+</script>

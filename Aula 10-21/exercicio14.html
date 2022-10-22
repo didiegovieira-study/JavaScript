@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 13</title>
+</head>
+<body>
+    
+    <h1>Avaliação de Atendente</h1>
+    <button onclick="sortear()">Avaliar</button> <br><br>
+    <div id="divMensagem"></div>
+    <button onclick="equipe()">Equipe</button> <br><br>
+    <div id="divMensagem2"></div>
+
+</body>
+</html>
+
+<script>
+
+    var cont = 0;
+    var total = 0;
+
+    function sortear() {
+        var sort = Number((Math.random() * 5).toFixed(1));
+        var frase = ''
+
+        if (sort >= 0 && sort < 0.5) {
+            frase = `Muito Triste <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png">`
+        } else if (sort >= 0.5 && sort < 1.5) {
+            frase = `Meio Triste <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png">`
+        } else if (sort >= 1.5 && sort < 3.5) {
+            frase = `Neutro <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png">`
+        } else if (sort >= 3.5 && sort < 4.5) {
+            frase = `Feliz <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png">`
+        } else {
+            frase = `Muito Feliz <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png">`
+        }
+
+        divMensagem.innerHTML = `Nota recebida: <b>${sort}</b> <br> ${frase}`
+        total = total + sort
+        cont+=1
+    }
+
+    function equipe() {
+        var media = (total / cont).toFixed(1)
+        divMensagem2.innerHTML = `${media}`
+
+        if (media >= 0 && media < 0.5) {
+            frase = `Muito Triste <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Sad_Face_Emoji_Icon_60x60.png">`
+        } else if (media >= 0.5 && media < 1.5) {
+            frase = `Meio Triste <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Confused_Face_Emoji_60x60.png">`
+        } else if (media >= 1.5 && media < 3.5) {
+            frase = `Neutro <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Unamused_Face_Emoji_Icon_60x60.png">`
+        } else if (media >= 3.5 && media < 4.5) {
+            frase = `Feliz <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Slightly_Smiling_Face_Emoji_Icon_60x60.png">`
+        } else {
+            frase = `Muito Feliz <br> <img src="https://cdn.shopify.com/s/files/1/1061/1924/files/Smiling_Emoji_with_Eyes_Opened_Icon_60x60.png">`
+        }
+
+        divMensagem2.innerHTML = `Média da equipe: <b>${media}</b> <br> ${frase}`
+    }
+
+
+
+</script>

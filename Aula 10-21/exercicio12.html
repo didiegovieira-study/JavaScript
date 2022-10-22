@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 12</title>
+</head>
+<body>
+     
+    Insira um número da sorte entre 0 e 100 <br>
+    <input placeholder="Insira um número" id="inNum"> <br><br>
+    <button onclick="sortear()">Valendo!</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        divMensagem.innerHTML = ``
+        var num = Number(inNum.value);
+        
+        if (num >= 0 && num <= 100) {
+            for (var cont = 0; cont < num; cont++) {
+                var sort = parseInt(Math.random() * 100);
+                divMensagem.innerHTML += `${sort} <br>`
+            }
+        } else {
+            alert('O número deve estar entre 0 e 100')
+        }
+    }
+
+</script>
