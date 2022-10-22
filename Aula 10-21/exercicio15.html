@@ -10,11 +10,25 @@
     
     <h2>Temperatura</h2>
     <button onclick="sortear()">Sortear Temperatura</button> <br><br>
-    
+    <div id="divMensagem"></div>
 
 </body>
 </html>
 
 <script>
+
+    function sortear() {
+        var sort = (-20) + parseInt(Math.random() * ((20 + 1) - (-20)));
+        divMensagem.innerHTML = ''
+        divMensagem.innerHTML = `Temperatura sorteada: <b>${sort}</b><br>`
+
+        if (sort < 1) {
+            divMensagem.innerHTML += `Dá pra conservar qualquer alimento`
+        } else if (sort >= 1 && sort <= 10) {
+            divMensagem.innerHTML += `Conserva a maioria dos alimentos`
+        } else {
+            divMensagem.innerHTML += `Estraga a maioria dos alimentos`
+        }
+    }
 
 </script>

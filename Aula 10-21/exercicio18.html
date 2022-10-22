@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 18</title>
+</head>
+<body>
+    
+    Digite seu nome: <input placeholder="Seu nome" id="inNome"> <br>
+    Digite seu número da sorte: <input placeholder="Deve ser entre 1 e 10" id="inNum"> <br>
+    <button onclick="sortear()">Sortear</button> <br><br>
+    <div id="divMensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    var cont = 0;
+
+    function sortear() {
+        var nome = inNome.value;
+        var num = Number(inNum.value);
+
+        divMensagem.innerHTML = ``
+
+        if (num >= 1 && num <= 10) {
+            var sort = parseInt(1 + Math.random() * (10+1-1))
+            divMensagem.innerHTML = `Número sorteado: <b>${sort}</b> <br>`
+            if (sort == num) {
+                divMensagem.innerHTML += `Parabéns, <b>${nome}</b> você foi sorteado(a) após <b>${cont}</b> sorteios!`
+            } else if (num != sort) {
+                divMensagem.innerHTML += `Seu número da sorte ainda não foi selecionado`
+            }
+            cont++
+        } else {
+            alert('O número deve ser de 1 até 10')
+        }
+    }
+
+</script>

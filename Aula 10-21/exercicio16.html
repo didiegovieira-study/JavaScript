@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 16</title>
+</head>
+<body>
+    
+    <h1>Fases da Lua</h1>
+    <button onclick="sortear()">Ver a Lua</button> <br><br>
+    <img src="" id="imgLua">
+
+</body>
+</html>
+
+<script>
+
+    function sortear() {
+        var sort = parseInt(1 + Math.random() * 30);
+        var lua = ''
+
+        if (sort >= 1 && sort <= 7) {
+            lua = `https://cdn.shopify.com/s/files/1/1061/1924/files/Dark_moon_emoji_icon_png_200x200.png`
+        } else if (sort >= 8 && sort <= 16) {
+            lua = `https://cdn.shopify.com/s/files/1/1061/1924/files/Full_moon_emoji_icon_png_200x200.png`
+        } else if (sort >= 17 && sort <= 22) {
+            lua = `https://cdn.shopify.com/s/files/1/1061/1924/files/First_quarter_moon_emoji_icon_png_200x200.png`
+        } else if (sort >= 23 && sort <= 31) {
+            lua = `https://cdn.shopify.com/s/files/1/1061/1924/files/Waning_crescent_moon_emoji_icon_png_200x200.png`
+        }
+
+        imgLua.src = `${lua}`
+    }
+
+</script>

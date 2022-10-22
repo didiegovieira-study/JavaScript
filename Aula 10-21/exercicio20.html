@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 20</title>
+</head>
+<body>
+    
+    <h1>Jogo de Dadinho</h1>
+        Jogador 1:  <span id="spJog1"></span> <br>
+        Jogador 2:  <span id="spJog2"></span> <br>
+        Empate:  <span id="spEmp"></span> <br> <br>
+    <button onclick="sortear()">Jogar</button> <br><br>
+    <div id="divMensagem"></div> <br>
+    <div id="divMensagem2">O jogador X está vencendo</div> <br><br>
+    <button onclick="zerar()">Zerar Jogo!</button>
+
+</body>
+</html>
+
+<script>
+
+    var jogador1 = 0;
+    var jogador2 = 0;
+    var empate = 0;
+
+    function sortear() {
+        var sort1 = parseInt(1 + Math.random() * (5+1-1)) 
+        var sort2 = parseInt(1 + Math.random() * (5+1-1)) 
+
+        divMensagem.innerHTML = `O jogador 1 tirou: <b>${sort1}</b> <br> O jogador 2 tirou: <b>${sort2}</b> <br><br>`
+
+        if (sort1 > sort2) {
+            jogador1++
+            spJog1.innerHTML = `<b>${jogador1}</b>`
+        } else if (sort1 < sort2) {
+            jogador2++
+            spJog2.innerHTML = `<b>${jogador2}</b>`
+        } else if (sort1 == sort2) {
+            empate++
+            spEmp.innerHTML = `<b>${empate}</b>`
+        }
+
+        if (jogador1 == jogador2) {
+            divMensagem2.innerHTML = `<b>Jogo Empatado</b>`
+        } else if (jogador1 > jogador2) {
+            divMensagem2.innerHTML = `<b>O jogador 1 está vencendo</b>`
+        } else {
+            divMensagem2.innerHTML = `<b>O jogador 2 está vencendo</b>`
+        }
+    }
+
+    function zerar() {
+        jogador1 = 0;
+        jogador2 = 0;
+        empate = 0;
+        divMensagem.innerHTML = ''
+        divMensagem2.innerHTML = ''
+        spJog1.innerHTML = ''
+        spJog2.innerHTML = ''
+        spEmp.innerHTML = ''
+    }
+
+</script>
