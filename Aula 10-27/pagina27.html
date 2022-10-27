@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 27</title>
+</head>
+<body>
+    
+    <h2>Cadastro de Frutas</h2>
+
+    <input type="text" id="in_fruta">
+    <button onclick="cadastrar()">Cadastrar</button> <br>
+    <div id="div_resultado">
+        Total de frutas: <b id="b_total">0</b> <br>
+        2ª fruta: <b id="b_segunda">0</b> <br>
+        4ª fruta: <b id="b_quarta">0</b> <br>
+        Última fruta: <b id="b_ultima"></b>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var frutas = []
+
+    function cadastrar() {
+        frutas.push(in_fruta.value);
+        in_fruta.value = ''
+
+        b_total.innerHTML = frutas.length
+        b_segunda.innerHTML = frutas[1]
+        b_quarta.innerHTML = frutas[3]
+        b_ultima.innerHTML = frutas[frutas.length-1]
+    }
+
+</script>

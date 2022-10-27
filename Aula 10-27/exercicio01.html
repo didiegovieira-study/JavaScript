@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    <input placeholder="Insira um Numero da Sorte" id="inNum"> <br> <br>
+    <button onclick="resultado()">Testar minha sorte</button> <br><br>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var num = parseInt(Number(inNum.value));
+        var cont = 0;
+        var sorte
+
+        if (num >= 0 && num <= 100) {
+            
+            while (cont <= 20) {
+                var sort = parseInt(Math.random() * 101)
+                
+                sorte = sort == num
+                if (sorte) {
+                    divResultado.innerHTML = `Muito bem, você é uma pessoa de sorte! Seu número saiu no ${cont}º sorteio`
+                    break
+                }
+                cont++
+                console.log(`${cont} ${sort}`)
+            }
+
+            if (!sorte) {
+                divResultado.innerHTML = `É, você não tem muita sorte em sorteios, pelo visto`                
+            }
+
+        }
+    }
+
+</script>
