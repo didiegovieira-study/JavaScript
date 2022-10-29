@@ -8,15 +8,46 @@
 </head>
 <body>
     
-    <button resultado()>Ver minha sorte</button>
-    
+    <button onclick="resultado()">Ver minha sorte</button>
+    <div id="divResultado"></div>
 
 </body>
 </html>
 
 <script>
 
+    
     function resultado() {
+        divResultado.innerHTML = ''
+        var coracao = 0;
+        var carta = 0;
+        var frase = ''
+        var cont = 0;
+
+        while (cont < 21) {
+            var sort = parseInt((Math.random() * 21));
+            
+            if (sort <= 10) {
+                frase = `<img src="https://imagepng.org/wp-content/uploads/2017/10/coracao.png" width="150px">`
+                coracao++
+            } else {
+                frase = `<img src="https://i.pinimg.com/originals/a1/30/38/a13038c40978b684546dc1480d10b1af.png" width="100px">`
+                carta++
+            }
+            
+            divResultado.innerHTML += `${frase}`
+            
+            if (coracao == 11 || carta == 11) {
+                break
+            }
+            cont++
+        }
+
+        if (coracao > carta) {
+            divResultado.innerHTML += `<br><br> Você tem mais sorte no amor`
+        } else if (carta > coracao) {
+            divResultado.innerHTML += `<br><br> Você tem mais sorte no jogo`
+        }
 
     }
 

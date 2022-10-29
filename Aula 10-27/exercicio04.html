@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    <b>Você prefere DC ou Marvel?</b>
+    <select name="" id="selCombo">
+        <option value="0">- Selecione -</option>
+        <option value="1">DC</option>
+        <option value="2">Marvel</option>
+    </select>
+
+    <button onclick="resultado()">Ver Programação Semanal na TV</button> <br><br>
+
+    <div id="divResultado"></div>
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var combo = selCombo.value;
+        var dc = 0;
+        var marvel = 0;
+
+        divResultado.innerHTML = ''
+
+        for (var cont = 1; cont <= 5; cont++) {
+            var sort = parseInt(1 + Math.random() * 5);
+
+            if (sort == 1) {
+                dc++
+                break
+            } else if (sort == 2) {
+                marvel++
+                break
+            }
+        }
+
+        if (dc == 1 || marvel == 1) {
+            divResultado.innerHTML = `Você verá um filme que gosta no ${cont}º dia`
+        } else if (cont > 5) {
+            divResultado.innerHTML = `É, ou lê um livro ou assiste um filme que não gosta mesmo`
+        }
+        
+    }
+
+</script>
