@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+    
+    <h1>Filmes que Mais Gosta</h1>
+
+    <input type="text" id="inFilmes" placeholder="Cadastre os filmes que gosta">
+    <button onclick="cadastro()">Cadastrar Filme</button> <br><br>
+    <div id="divMsg">
+        Seu filme favorito: <br>
+        Seu 3º filme favorito: <br>
+        Total de filmes cadastrados:
+    </div>
+
+</body>
+</html>
+
+<script>
+    var lista = []
+
+    function cadastro() { 
+        var filme = inFilmes.value
+        lista.push(filme);
+        var frase = ''
+
+        if (lista.length == 3) {
+            frase = `${lista[2]}`
+        } else {
+            frase = `Ainda não existe`
+        }
+
+        divMsg.innerHTML = `Seu filme favorito: ${lista[0]} <br>
+        Seu 3º filme favorito: ${frase} <br>
+        Total de filmes cadastrados: ${lista.length}
+        `
+        
+    }
+
+</script>

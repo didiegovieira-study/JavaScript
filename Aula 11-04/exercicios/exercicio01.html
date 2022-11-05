@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="inNome" placeholder="Nome do Produto"> <br>
+    <input type="text" id="inPreco" placeholder="Preço do Produto"> <br>
+    <button onclick="cadastrar()">Registrar Produto</button> <br><br>
+    <button onclick="verificar()">Verificar Produtos</button> <br><br>
+    <div id="divResultado"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastrar() {
+        var nome = inNome.value;
+        var preco = inPreco.value;
+
+        if (nome == '' || preco == '') {
+            alert('Inválido! Verifique o preenchimento dos campos e tente novamente!')
+            lista = []
+
+        } else {
+            var cadastro = {
+                nome,
+                preco,
+            }
+            lista.push(cadastro)
+        }
+    }
+
+    function verificar() {
+
+        divResultado.innerHTML = ''
+
+        for(var i = 0; i < lista.length; i++) {
+            divResultado.innerHTML += `Produto: ${lista[i].nome} <br> Preço: ${lista[i].preco} <br><br>`
+        }
+
+        if (lista.length < 0){
+            alert('Não há produtos registrados na lista!')
+        }
+    }
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 09</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Qual o nome dos projetos que ja fez" id="inProjeto">
+    <button onclick="cadastro()">Registrar Projeto</button> <br><br>
+    <div id="divMsg"></div> <br><br>
+    <button onclick="mostrar()">Mostrar Projetos</button> <br><br>
+    <div id="divMsg2"></div>
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastro() {
+        var projeto = inProjeto.value;
+        lista.push(projeto)
+
+        var exp = ''
+
+            if (lista.length >= 0) {
+                exp = 'Júnior'
+            } 
+            if (lista.length >= 5) {
+                exp = 'Pleno'
+            } 
+            if (lista.length >= 13){
+                exp = 'Sênior'
+            }
+
+        divMsg.innerHTML = `${lista.length} é a quantidade de projetos e ${exp} é seu nivel de experiencia, segundo estas regras: <br><br>
+        0 a 4: Júnior <br>
+        5 a 12: Pleno desde o projeto: ${lista[4]} <br>
+        13 ou mais: Sênior desde o projeto: ${lista[12]}`
+
+    }
+
+    function mostrar() {
+        var frase = ''
+        divMsg2.innerHTML = ''
+        var limite = lista.length
+
+        for (var i = limite; i > 0; i--) {
+            frase += `${i} - ${lista[i-1]} <br>`
+        }
+
+        divMsg2.innerHTML = `<b>Lista de Projetos:</b> <br>
+        ${frase}`
+
+    }
+
+</script>

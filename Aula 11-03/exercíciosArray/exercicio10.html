@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 10</title>
+</head>
+<body>
+    
+    <h1>Linhas de Onibus</h1>
+
+    <input type="text" placeholder="Digite o Nome da Linha" id="inOnibus">
+    <button onclick="cadastro()">Gravar Buzão</button> <br><br>
+    <div id="divMsg"></div> <br>
+    <input type="text" placeholder="Pesquise se ja pegou a linha" id="inPesquisa">
+    <button onclick="pesquisa()">Pesquisar</button> <br><br>
+    <div id="divMsg2"></div>
+    
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastro() {
+        lista.push(inOnibus.value);
+        var frase = ''
+
+        for(var i = lista.length; i > 0; i--) {
+            frase += `${lista[i-1]} <br>`
+        }
+        divMsg.innerHTML = `${frase}`
+    }
+
+    function pesquisa() {
+        var pes = inPesquisa.value;
+        var frase = ''
+        var cont = 0
+
+        for(var i = 0; i < lista.length; i++) {
+            if(pes == lista[i]) {
+                cont++
+                frase += `${i+1}, `
+            }
+        }
+
+        divMsg2.innerHTML = ` Você já pegou essa linha ${cont} vezes, nessa ordem: ${frase}`
+
+
+
+    }
+
+</script>

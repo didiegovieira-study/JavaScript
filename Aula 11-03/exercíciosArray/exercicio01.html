@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input placeholder="Pesquisar" id="inPesquisa"> <br>
+    <button onclick="buscar()">Buscar</button>
+    <div id="divResultado"></div>
+
+</body>
+</html>
+<script>
+    var listaFruta = ["mamao", "banana", "natan"]
+
+    function buscar() {
+        var pesquisado = listaFruta.indexOf(inPesquisa.value)
+        
+        var frase
+
+        if(pesquisado >= 0) {
+            frase = `A fruta ${inPesquisa.value} existe na lista `
+        } else {
+            frase = `Não existe a fruta ${inPesquisa.value} na lista`
+        }
+
+        divResultado.innerHTML = frase
+    }
+</script>

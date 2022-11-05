@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Cadastre seu bairro" id="inBairro">
+    <button onclick="cadastrar()">Cadastrar Bairro</button> <br>
+    <input type="text" id="inPesquisa" placeholder="Pesquise seu bairro">
+    <button onclick="pesquisar()">Relembrar Moradia</button> <br><br>
+    <div id="divResultado"></div>
+    
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastrar() {
+        var bairro = inBairro.value;
+        lista.push(bairro)
+    }
+
+    function pesquisar() {
+        var pesquisa = Number(inPesquisa.value);
+
+        if (pesquisa <= lista.length) {
+            divResultado.innerHTML = `A sua ${pesquisa} moradia foi em ${lista[pesquisa-1]}`
+        } else {
+            alert(`Você ainda não morou num ${pesquisa}º bairro!`)
+        }
+        
+    }
+
+</script>

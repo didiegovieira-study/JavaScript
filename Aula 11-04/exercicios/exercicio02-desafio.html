@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Vand Edor</h1>
+    
+    <h1>Produto</h1>
+    <input type="text" id="inNome" placeholder="Nome do Produto"> <br>
+    <input type="text" id="inPreco" placeholder="Preço do Produto"> <br>
+    Tipo:
+    <select name="" id="selTipo">
+        <option value="">- Selecione o Tipo -</option>
+        <option value="Gerais">Gerais</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Eletronicos">Eletronicos</option>
+    </select> <br>
+    <button onclick="cadastrar()">Registrar Produto</button>
+    <button onclick="verificar()">Verificar Produtos</button> <br><br>
+    <div id="divResultado"></div>
+
+    <h1>Filtros</h1>
+    Filtro por Produto: <br>
+    <input type="text" id="inFilNome"> <button onclick="procurar()">Procurar</button> <br>
+    Filtro por Tipo: <br>
+    <select name="" id="selPesquisa">
+        <option value="">- Selecione o Tipo -</option>
+        <option value="Gerais">Gerais</option>
+        <option value="Alimentos">Alimentos</option>
+        <option value="Eletronicos">Eletronicos</option>
+    </select>
+    <button onclick="filtrar()">Filtrar</button> <br>
+    <div id="divResultado2"></div> <br><br>
+    <div id="divResultado3"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastrar() {
+        divResultado.innerHTML = ''
+        var nome = inNome.value;
+        var preco = inPreco.value;
+        var tipo = selTipo.value;
+
+        if (nome == '' || preco == '' || tipo == '') {
+            alert('Inválido! Verifique o preenchimento dos campos e tente novamente!')
+
+        } else {
+            lista.push(
+                {nome:nome, preco:preco, tipo:tipo}
+                )
+        } 
+        
+    }
+
+    function verificar() {
+
+        divResultado.innerHTML = ''
+
+        if (lista.length > 0) {
+            divResultado.innerHTML = 'Lista de produtos listados: <br><br>'
+            for(var i = 0; i < lista.length; i++) {
+                divResultado.innerHTML += `Produto: ${lista[i].nome} <br> Preço: ${lista[i].preco} <br> Tipo: ${lista[i].tipo} <br><br>`
+            }
+        } else {
+            alert('Não há produtos registrados na lista!')
+        }
+
+    }
+
+    function procurar() {
+
+        var pesquisaSel = selPesquisa.value;
+        var contador
+        
+        if(lista.length > 0) {
+            var pesquisa = inFilNome.value;
+            var produtosFiltrados = []
+            
+            for(var i = 0; i < lista.length; i++) {
+                if (pesquisa == lista[i].nome) {
+                    produtosFiltrados.push(lista[i]);
+                }
+            }
+        }
+
+        if (produtosFiltrados.length > 0) {
+            divResultado2.innerHTML = `Produtos encontrados na busca por "${pesquisa}" <br>`
+
+            for (var i = 0; i < produtosFiltrados.length; i++) {
+
+                divResultado2.innerHTML += `Produto: ${produtosFiltrados[i].nome} <br> Preço: ${produtosFiltrados[i].preco} <br> Tipo: ${produtosFiltrados[i].tipo} <br><br>`
+            }
+        } else {
+            alert('Não há nenhum produto com este nome registrado!')
+        }
+
+    }
+
+    function filtrar() {
+        
+        if (lista.length > 0) {
+            var pesquisaSel = selPesquisa.value;
+            var pesquisa = inFilNome.value;
+            var produtosFiltrados = []
+            
+            for(var i = 0; i < lista.length; i++) {
+                if (pesquisaSel == lista[i].tipo) {
+                    produtosFiltrados.push(lista[i]);
+                }
+            }
+        }
+        
+        if (produtosFiltrados.length > 0) {
+            divResultado2.innerHTML = `Produtos encontrados na busca por "${pesquisaSel}" <br>`
+
+            for (var i = 0; i < produtosFiltrados.length; i++) {
+
+                divResultado2.innerHTML += `Produto: ${produtosFiltrados[i].nome} <br> Preço: ${produtosFiltrados[i].preco} <br> Tipo: ${produtosFiltrados[i].tipo} <br><br>`
+            }
+        } else {
+            alert('Não há nenhum produto com este tipo registrado!')
+        }
+
+    }
+
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina 29</title>
+</head>
+<body>
+    
+    Qual sobremesa comeu ?
+    <input type="text" id="in_sobremesas">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <br>
+    <button onclick="mostrar()">Mostrar todas</button>
+    <br>
+    <div id="div_sobremesas"></div>
+    <br>
+    Pesquisa: <input placeholder="pesquisa" id="in_pesquisa" onkeyup="pesquisa()">
+    <div id="div_pesquisa"></div>
+
+
+    
+</body>
+</html>
+
+<script>
+
+    var sobremesas = []
+
+    function cadastrar() {
+        sobremesas.push(in_sobremesas.value)
+    }
+/* 
+    function mostrar() {
+        div_sobremesas.innerHTML = ''
+
+        for (var i = 0; i < sobremesas.length; i++) {
+
+            var atual = sobremesas[i]
+
+            div_sobremesas.innerHTML += `${i+1} - ${atual} <br>`
+        }
+    } */
+
+    /* function mostrar() {
+        div_sobremesas.innerHTML = ''
+
+        for (var i = sobremesas.length-1; i > 1; i--) {
+
+            var atual = sobremesas[i]
+
+            if ((i-1) % 2 == 1) {
+                div_sobremesas.innerHTML += `<span style="color: blue;">${i-1} - ${atual} <br></span>`
+            } else {
+                div_sobremesas.innerHTML += `${i-1} - ${atual} <br>`
+            }
+        }
+    } */
+
+    function pesquisa() {
+        div_pesquisa.innerHTML = ''
+
+        var pesquisa = in_pesquisa.value
+        var contador = 0;
+
+        if (sobremesas.indexOf(pesquisa) < 0){
+            div_pesquisa.innerHTML = `Nao comeu sorvete ainda`
+        } else {
+
+            for (var i = 0; i < sobremesas.length; i++) {
+                if (sobremesas[1] == pesquisa) {
+                    contador++
+                }
+            }
+            div_pesquisa.innerHTML = `Voce comeu ${contador} vezes`
+        }
+    }
+
+</script>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- <input type="text" id="ipt_amigo" placeholder="Insira o amigo"> -->
+    <input type="text" placeholder="Insira o nome" id="ipt_nome">
+    <input type="text" placeholder="Insira o telefone" id="ipt_telefone">
+    <button onclick="cadastrar()">Cadastrar</button>
+    <!-- <button onclick="exibir()">Exibir</button> -->
+    <button onclick="exibir()">Exibir a lista de Contatos</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+
+<script>
+
+/*     var pessoa = {
+        nome: "JP",
+        idade: 23,
+        amigos: []
+    }
+
+    function cadastrar() {
+        pessoa.amigos.push(ipt_amigo.value);
+    }
+
+    function exibir() {
+        div_mensagem.innerHTML = `Pessoa: ${pessoa.nome} <br> Idade: ${pessoa.idade}`
+        div_mensagem.innerHTML += `<br> Amigos: ${pessoa.amigos}`
+    } */
+
+
+
+    // eu fiz
+/*     var lista = {
+        nome: [],
+        telefone: []
+    }
+
+    function cadastrar() {
+        lista.nome.push(ipt_nome.value);
+        lista.telefone.push(ipt_telefone.value);
+    }
+
+    function exibir() {
+        
+        var frase = ''
+
+        for(var i = 0; i < lista.nome.length; i++){
+            frase += `${i+1} - Nome: ${lista.nome[i]}, Telefone: ${lista.telefone[i]} <br>`
+        }
+        div_mensagem.innerHTML = frase
+    } */
+
+    var contatos = []
+
+    function cadastrar() {
+        var contato = {
+            nome: ipt_nome.value,
+            telefone: ipt_telefone.value
+        }
+        contatos.push(contato)
+    }
+
+    function exibir() {
+        for(var i = 0; i < contatos.length; i++) {
+            var objetoContatoAtual = contatos[i]
+            div_mensagem.innerHTML += `
+                Nome: ${objetoContatoAtual.nome} <br>
+                Telefone: ${objetoContatoAtual.telefone} <br><br>
+            `
+        }
+    }
+
+</script>
