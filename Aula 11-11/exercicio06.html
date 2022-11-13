@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 06</title>
+</head>
+<body>
+    
+    <input placeholder="Digite um número qualquer" id="inNum"> <br>
+    <button onclick="analisar()">Analisar Historico</button> <br><br>
+    <div id="divMsg">
+        1º Número: 0 <br>
+        2º Número: 0 <br>
+        3º Número: 0 <br>
+        4º Número: 0 <br>
+        Maior: 0 <br>
+        Menor: 0 <br>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    var v = [];
+
+    function analisar() {
+        var num = Number(inNum.value);
+        v.push(num);
+
+        var max = 0;
+
+        for (var i = 0, min = v[0]; i < v.length; i++) {
+
+            if (v[i] > max) {
+                max = v[i];
+            }
+
+            if (v[i] < min) {
+                min = v[i];
+            }
+
+        }
+
+        divMsg.innerHTML = `
+        1º Número: ${v[0]} <br>
+        2º Número: ${v[1]} <br>
+        3º Número: ${v[2]} <br>
+        4º Número: ${v[3]} <br>
+        Maior: ${max} <br>
+        Menor: ${min} <br>
+        `
+    }
+
+</script>

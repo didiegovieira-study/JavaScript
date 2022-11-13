@@ -8,6 +8,16 @@
 </head>
 <body>
     
+    <select name="" id="selResultado">
+        <option value="">Indique o Resultado</option>
+        <option value="1">Vitória</option>
+        <option value="2">Empate</option>
+        <option value="3">Derrota</option>
+    </select>
+    <button onclick="registrar()">Registrar Jogo</button> <br><br>
+    <div id="divMsg"></div> <br><br>
+    <input placeholder="Indique qual jogo quer saber" id="inPesquisa" onkeyup="pesquisa()"> <br> <br>
+    <div id="divMsg2"></div>
 
 
 </body>
@@ -15,5 +25,52 @@
 
 <script>
 
+    var vetor = [];
+    var vitoria = 0;
+    var empate = 0;
+    var derrota = 0;
+    
+    function registrar() {
+        var r = selResultado.value;
+
+        if (r == '') {
+            alert('Indique um Resultado')
+        } else if (r == 1) {
+            vetor.push(1);
+            vitoria++
+        } else if (r == 2) {
+            vetor.push(2);
+            empate++
+        } else if (r == 3) {
+            vetor.push(3);
+            derrota++
+        };
+
+        var pontos = (vitoria * 3) + empate;
+        
+        var aprov = pontos / (vetor.length * 3) * 100;
+
+        divMsg.innerHTML = `O time teve: ${vitoria} vitórias, ${empate} empates, ${derrota} derrotas <br><br> Pontuação total: ${pontos} <br><br> Aproveitamento: ${aprov}%`;
+    }
+
+    function pesquisa() {
+        var p = Number(inPesquisa.value);
+        
+        var frase = '';
+
+        if (vetor[p-1] == 1) {
+            frase += `No ${p}º jogo, o time Ganhou`
+        } else
+        if (vetor[p-1] == 2) {
+            frase += `No ${p}º jogo, o time Empatou`
+        } else
+        if (vetor[p-1] == 3) {
+            frase += `No ${p}º jogo, o time Derrota`
+        } else if (p > vetor.length) {
+            frase += `Não foi cadastrado um ${p+1}º jogo`
+        }
+
+        divMsg2.innerHTML = `${frase}`
+    }
     
 </script>

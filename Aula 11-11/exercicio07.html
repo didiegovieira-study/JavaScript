@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 07</title>
+</head>
+<body>
+    
+    <div id="divRegistrar" style="display: block;">
+        <h1>Análise de performance de Alunos - Registro</h1>
+        Entre com o Nome do Aluno: <input type="text" id="inNome"> <br>
+        Entre com a Nota do Aluno: <input type="text" id="inNota"> <br><br>
+        <button onclick="registrar()">Registrar</button> 
+        <button onclick="analisar()">Analisar</button> <br><br>
+        <div id="divMsg"></div>
+    </div>
+
+    <div id="divAnalisar" style="display: none;">
+        <h1>Análise de performance de Alunos - Pesquisa</h1>
+        Entre com o intervalo de notas: <input placeholder="De" id="inMin"> <input placeholder="Até" id="inMax"> <br><br>
+        <button onclick="pesquisar()">Pesquisar</button> <button onclick="voltar()">Voltar</button>
+        <div id="divMsg2"></div>
+    </div>
+</body>
+</html>
+
+<script>
+
+    var v = []
+
+    function registrar() {
+        var nome = inNome.value;
+        var nota = Number(inNota.value);
+
+        divMsg.innerHTML = ''
+
+        if (nome == '' || (nota < 0 || nota > 10)) {
+            alert('O nome está vazio ou a nota não está entre 0 e 10')
+        } else {
+            var guardar = {
+                nome : nome,
+                nota : nota
+            };
+
+            v.push(guardar);
+        }
+
+        for (var i = v.length; i > 0; i--) {
+            divMsg.innerHTML += `Nome: ${v[i-1].nome} <br> Nota: ${v[i-1].nota} <br><br>`
+        }
+    }
+
+    function analisar() {
+        divRegistrar.style.display = 'none';
+        divAnalisar.style.display = 'block';
+    }
+
+    function voltar() {
+        divRegistrar.style.display = 'block';
+        divAnalisar.style.display = 'none';
+    }
+
+    function pesquisar() {
+        var de = Number(inMin.value);
+        var ate = Number(inMax.value);
+        var sum = 0;
+        var alunos = [];
+        var frase = '';
+        var min = 0;
+        var max = 0;
+        var media = 0;
+
+        if ((de < 0 && de > 10) || (ate < 0 && ate > 10)) {
+            alert('O valor minimo e maximo deve ir de 0 até 10')
+        } else {
+            if (de <= ate) {
+                for (var i = 0, min = v[0].nota; i < v.length; i++) {
+
+                    if (v[i].nota > de && v[i].nota < ate) {
+                        alunos.push(v[i].nota);
+                        sum++;
+
+                        frase += `O aluno ${v[i].nome} ficou com a nota ${v[i].nota} <br>`;
+                        media += v[i].nota;
+                    }
+
+                    if (v[i].nota > max) {
+                        max = v[i].nota;
+                    }
+
+                    if (v[i].nota < min) {
+                        min = v[i].nota;
+                    }
+
+                }
+            } else {
+                alert(`Valor de minimo deve ser menor que o maximo`)
+            }
+        }
+
+        divMsg2.innerHTML = `${frase} <br><br> Total de alunos registrados: ${v.length} <br><br> Total de alunos listados: ${alunos.length} (com nota no intervalo informado) <br><br> Maior nota = ${max} <br><br> Menor nota = ${min} <br><br> Média da Nota = ${media/alunos.length}`
+    }
+
+</script>
