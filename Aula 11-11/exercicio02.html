@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    Qual o nome do filho: <input placeholder="nome do filho" id="inFilho"> <br>
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    <button onclick="atualizar()">Atualizar Família</button> <br><br>
+    <div id="divMsg"></div>
+
+</body>
+</html>
+
+<script>
+
+    var vetor = [
+
+    ];
+
+    function cadastrar() {
+        var filho = inFilho.value;
+        var pesquisa = [];
+        
+        for (let index = 0; index < vetor.length; index++) {
+            if (filho == vetor[index]) {
+                pesquisa.push(vetor[index])
+            }
+        }
+        
+        if (pesquisa.length > 0) {
+            alert('Não pode mais de 1 filho com o mesmo nome!')
+        } else {
+            vetor.push(filho);
+        }
+        
+        inFilho.value = '';
+    }
+
+    function atualizar() {
+        divMsg.innerHTML = '';
+
+        divMsg.innerHTML = `Você tem ${vetor.length} filhos <br><br>
+            Seu custo mensal será aproximadamente R$${(vetor.length * 3000).toFixed(2)} se colocar eles em escola particular ou R$${(vetor.length * 1500).toFixed(2)} se eles estudarem em escola pública.
+        ` 
+
+    }
+
+</script>

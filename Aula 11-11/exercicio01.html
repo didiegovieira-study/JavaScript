@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+    
+    Qual o preço do produto: <input placeholder="digite o preço" id="inPreco"> <br>
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    <button onclick="atualizar()">Atualizar Estoque</button> <br><br>
+    <div id="divMsg"></div>
+
+</body>
+</html>
+
+<script>
+
+    var produto = [];
+    var soma = 0;
+
+    function cadastrar() {
+        var preco = Number(inPreco.value);
+        
+        produto.push(preco);
+
+        inPreco.value = '';
+
+    }
+
+    function atualizar() {
+        divMsg.innerHTML = ''
+
+        for (let index = 0; index < produto.length; index++) {
+            soma += produto[index];
+        }
+
+        divMsg.innerHTML = `Você tem ${produto.length} produtos cadastrados em estoque <br> Seu estoque vale R$${soma}`
+
+    }
+
+</script>
