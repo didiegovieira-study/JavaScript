@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <input type="text" id="inIdade" onkeyup="res()"> <br><br>
+    <div id="divMsg"></div>
+
+</body>
+</html>
+
+<script>
+
+    function res() {
+        var idade = Number(inIdade.value);
+
+        divMsg.innerHTML = ''
+
+        var infancia = idade > 12 ? 'true' : 'false'
+        var adolescencia = idade > 18 ? 'true' : 'false'
+        var idoso = idade > 65 ? 'true' : 'false'
+        var pontos = idade > 65 ? '80' : idade > 18 ? '30' : idade > 12 ? '10' : '0'
+
+        divMsg.innerHTML = `
+            Já passou pela infancia: ${infancia} <br>
+            Já passou pela adolescência: ${adolescencia} <br>
+            Já é um idoso: ${idoso} <br>
+            TOTAL DE PONTOS: ${pontos}
+        `
+    }
+
+</script>

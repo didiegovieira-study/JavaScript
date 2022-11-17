@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 01</title>
+</head>
+<body>
+
+    <input type="text" placeholder="Insira nomes de animais" id="inAnimal"> <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    <button onclick="relatorio()">Relatorio</button>
+    <div id="divMsg"></div>
+    
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function cadastrar() {
+        var animal = inAnimal.value;
+        lista.push(animal)
+    }
+
+    function relatorio() {
+        var pesquisa = []
+        var i2cont = 0;
+        var i3cont = 0;
+        var frase = ''
+
+        for (var i = 0; i < lista.length; i++) {
+            var conta = 0
+            
+            for (let i2 = 0; i2 < lista.length; i2++) {
+                if (lista[i] == lista[i2]) {
+                    conta++
+                }
+                
+            }
+
+            for (let i3 = 0; i3 < lista.length; i3++) {
+                if (lista[i2cont] != lista[i]) {
+                    frase += `${lista[i]}: cadastrou ${conta} vezes <br>`
+                } else {
+
+                }
+            }
+            i2cont++
+
+            /* var cont = 0;
+
+
+            for (var i2 = 0; i2 < lista.length; i2++) {
+                if (pesquisa[i2cont] == lista[i3cont]) {
+                    cont++
+                    i3cont++
+                } else {
+                    i3cont++
+                }
+            }
+            i2cont++ */
+        }
+
+        divMsg.innerHTML = `<br> Você cadastrou ${lista.length} animais: <br><br> ${frase}`
+
+    }
+
+</script>

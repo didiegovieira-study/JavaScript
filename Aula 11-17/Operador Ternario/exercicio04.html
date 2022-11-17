@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 04</title>
+</head>
+<body>
+
+    <input type="text" placeholder="Insira sua frequencia" id="inFrequencia"> <br><br>
+    <button onclick="analisar()">Analisar Frequencia</button> <br>
+    <div id="divMsg">
+    </div>
+    
+</body>
+</html>
+
+<script>
+
+    function analisar() {
+        var freq = Number(inFrequencia.value);
+
+        var image = freq < 50 ? `<img width="200px" src="https://img.freepik.com/fotos-gratis/turista-que-corre-rapido_1368-7021.jpg?w=2000" alt="">` : `<img width="200px" src="https://blog.redebatista.edu.br/wp-content/uploads/2018/12/edd.jpg" alt="">`
+
+        divMsg.innerHTML = image
+    }
+
+</script>

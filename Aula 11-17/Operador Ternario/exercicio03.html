@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03</title>
+</head>
+<body>
+    
+    <input type="text" placeholder="Insira quantos chocolates comprou" id="inQuantidade"> <button onclick="resultado()">Compra</button> <br><br>
+    <div id="divMsg"></div>
+
+
+</body>
+</html>
+
+<script>
+
+    function resultado() {
+        var quant = Number(inQuantidade.value);
+
+        var frase = quant <= 12 ? `O valor da sua compra foi de: ${quant*3}` : `O valor da sua compra foi de: ${quant*2.5}`
+
+        divMsg.innerHTML = frase
+    }
+
+</script>

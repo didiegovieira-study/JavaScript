@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Insira sua nota 1" id="inNota1">
+    <input type="text" placeholder="Insira sua nota 2" id="inNota2"> <br>
+    <input type="text" placeholder="Insira sua frequencia" id="inFrequencia"> <br>
+    <button onclick="nota()">Mostrar Nota</button>
+    <div id="divMsg"></div>
+</body>
+</html>
+
+
+<script>
+
+    function nota() {
+        var nota = Number(inNota1.value) + Number(inNota2.value) / 2
+        var freq = inFrequencia.value;
+
+
+        var frase = freq >= 75 && nota >= 6 ? 'Parabens, você passou' : 'Tente outra vez'
+        
+        divMsg.innerHTML = frase
+    }
+
+
+</script>
