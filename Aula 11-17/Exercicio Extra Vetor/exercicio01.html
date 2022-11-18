@@ -8,7 +8,8 @@
 </head>
 <body>
 
-    <input type="text" placeholder="Insira nomes de animais" id="inAnimal"> <button onclick="cadastrar()">Cadastrar</button> <br><br>
+    <input type="text" placeholder="Insira nomes de animais" id="inAnimal"> 
+    <button onclick="cadastrar()">Cadastrar</button> <br><br>
     <button onclick="relatorio()">Relatorio</button>
     <div id="divMsg"></div>
     
@@ -18,53 +19,39 @@
 <script>
 
     var lista = []
+    var repetido = []
 
     function cadastrar() {
         var animal = inAnimal.value;
-        lista.push(animal)
+        
+        repetido.push(animal)
+
+        if (lista.indexOf(animal) < 0) {
+            lista.push(animal)
+        }
+
     }
 
     function relatorio() {
-        var pesquisa = []
-        var i2cont = 0;
-        var i3cont = 0;
-        var frase = ''
-
+        var frase = '';
+        divMsg.innerHTML = ''
+        
         for (var i = 0; i < lista.length; i++) {
-            var conta = 0
-            
-            for (let i2 = 0; i2 < lista.length; i2++) {
-                if (lista[i] == lista[i2]) {
-                    conta++
-                }
-                
-            }
-
-            for (let i3 = 0; i3 < lista.length; i3++) {
-                if (lista[i2cont] != lista[i]) {
-                    frase += `${lista[i]}: cadastrou ${conta} vezes <br>`
-                } else {
-
-                }
-            }
-            i2cont++
-
-            /* var cont = 0;
-
-
-            for (var i2 = 0; i2 < lista.length; i2++) {
-                if (pesquisa[i2cont] == lista[i3cont]) {
+            var cont = 0;
+            for (var i2 = 0; i2 < repetido.length; i2++) {
+                if (lista[i] == repetido[i2]) {
                     cont++
-                    i3cont++
-                } else {
-                    i3cont++
                 }
             }
-            i2cont++ */
+
+            frase += `"${lista[i]}": cadastrou ${cont} vezes <br>`
         }
 
-        divMsg.innerHTML = `<br> Você cadastrou ${lista.length} animais: <br><br> ${frase}`
-
+        divMsg.innerHTML = `<br> Você cadastrou ${lista.length} animais <br><br>
+        ${frase}
+        `
     }
+
+    
 
 </script>

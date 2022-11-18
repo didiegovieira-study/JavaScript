@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 02</title>
+</head>
+<body>
+    
+    <input type="text" id="inTexto" placeholder="Digite uma frase ou palavra qualquer" onkeydown="resultado()"> <br><br>
+    <div id="divMsg"></div>
+
+</body>
+</html>
+
+<script>
+
+    var lista = []
+    var repetido = []
+    
+    function resultado() {
+        
+        var frase = ''
+
+        divMsg.innerHTML = ''
+
+        var texto = inTexto.value;
+
+        repetido.push(texto);
+
+        if(lista.indexOf(texto) < 0){
+            lista.push(texto)
+        }
+
+        for (var i = 0; i < lista.length; i++) {
+            var cont = 0;
+            for (var i2 = 0; i2 < repetido.length; i2++) {
+                if (lista[i] == repetido[i2]) {
+                    cont++
+                }
+            }
+
+            frase += `"${lista[i]}": cadastrou ${cont} vezes <br>`
+        }
+
+        /* if (texto == '') {
+            var lista = []
+        var repetido = []
+        } */
+
+        divMsg.innerHTML = `Você digitou um texto de ${lista.length} letras: <br><br>`
+    }
+
+
+</script>
