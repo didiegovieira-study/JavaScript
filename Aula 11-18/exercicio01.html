@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Análise de performance de Alunos - Registro <br><br>
+    Entre com o Nome do Aluno: <input type="text" id="inNome"> <br>
+    Entre com a Nota do Aluno: <input type="text" id="inNota"> <br><br>
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+    
+</body>
+</html>
+
+<script>
+
+    var lista = []
+
+    function registrar() {
+        var nome = inNome.value;
+        var nota = Number(inNota.value);
+
+        if (nome == '' || nota == '') {
+            alert('O nome e a nota do aluno devem estar preenchidos')
+        } else {
+            lista.push(
+                {nome: nome, nota: nota}
+            )
+        }
+    }
+
+</script>
