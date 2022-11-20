@@ -7,12 +7,33 @@
     <title>Document</title>
 </head>
 <body>
-    
-    Análise de performance de Alunos - Registro <br><br>
-    Entre com o Nome do Aluno: <input type="text" id="inNome"> <br>
-    Entre com a Nota do Aluno: <input type="text" id="inNota"> <br><br>
-    <button onclick="registrar()">Registrar</button>
-    <button onclick="analisar()">Analisar</button>
+    <div class="cadastro" style="display: block;">
+        Análise de performance de Alunos - Registro <br><br>
+        Entre com o Nome do Aluno: <input type="text" id="inNome"> <br>
+        Entre com a Nota do Aluno: <input type="text" id="inNota"> <br><br>
+        <button onclick="registrar()">Registrar</button>
+        <button onclick="analisar()">Analisar</button> <br><br>
+        <div id="divMsg"></div>
+    </div>
+
+    <div class="analise" style="display: none;">
+        Análise de performance de Alunos - Pesquisa <br><br>
+        Entre com o intervalo de notas: <br> <input placeholder="De" id="inDe"> 
+        <input placeholder="Até" id="inAte">
+        <br><br>
+
+        <button onclick="pesquisar()">Pesquisar</button>
+        <button onclick="voltar()">Voltar</button> <br><br>
+        <select name="" id="selAluno">
+            <option value=""></option>
+            <option value="1">Nome</option>
+            <option value="2">Nota maior que</option>
+            <option value="3">Nota menor que</option>
+        </select>
+        <input placeholder="Aplique seu filtro" id="inFiltro">
+        <button onclick="filtrar()">Aplicar Filtros</button>
+        <div id="divMsg2"></div>
+    </div>
     
 </body>
 </html>
@@ -22,16 +43,183 @@
     var lista = []
 
     function registrar() {
-        var nome = inNome.value;
-        var nota = Number(inNota.value);
+        divMsg.innerHTML = ''
+        
+        var nomeAluno = inNome.value;
+        var notaAluno = Number(inNota.value);
 
-        if (nome == '' || nota == '') {
+        if (nomeAluno == '' || notaAluno == '') {
             alert('O nome e a nota do aluno devem estar preenchidos')
         } else {
             lista.push(
-                {nome: nome, nota: nota}
+                {nome: nomeAluno, nota: notaAluno}
             )
         }
+
+        for (var i = lista.length; i > 0; i--) {
+            divMsg.innerHTML += `Nome: ${lista[i-1].nome} <br> Nome: ${lista[i-1].nota} <br><br>`
+        }
+    }
+
+    function analisar() {
+        var cadastro = document.querySelector('.cadastro')
+        cadastro.style.display = 'none'
+
+        var analisar = document.querySelector('.analise')
+        analisar.style.display = 'block'
+    }
+
+    function voltar() {
+        var cadastro = document.querySelector('.cadastro')
+        cadastro.style.display = 'block'
+
+        var analisar = document.querySelector('.analise')
+        analisar.style.display = 'none'
+    }
+    
+    var alunos = []
+    
+    function pesquisar() {
+        var de = inDe.value;
+        var ate = inAte.value;
+        var frase = ''
+        divMsg2.innerHTML = ''
+        var max = 0
+        var media = 0
+        
+
+
+        if ((de >= 0 && de <= 10) || (ate >= 0 && ate <= 10)) {
+            if (de <= ate) {
+
+                for (var i = 0, min = lista[i].nota; i < lista.length; i++) {
+                    if (lista[i].nota >= de && lista[i].nota <= ate) {
+                        alunos.push(lista[i].nota)
+                        media += lista[i].nota
+
+                        frase += `O aluno ${lista[i].nome} ficou com a nota ${lista[i].nota} <br>`;
+                    }
+
+                    if (lista[i].nota > max) {
+                        max = lista[i].nota;
+                    }
+
+                    if (lista[i].nota < min) {
+                        min = lista[i].nota;
+                    }
+                }
+
+                divMsg2.innerHTML = `Total de alunos registrados: ${lista.length} <br>
+                Total de alunos listados: ${alunos.length} (com nota no intervalo informado) <br><br>
+                ${frase} <br><br> 
+                Maior nota = ${max} <br>
+                Menor nota = ${min} <br>
+                Média da Nota = ${media/alunos.length}
+                `
+            } else {
+                alert('O valor de "De" não pode ser maior que o "Até"')
+            }
+        } else {
+            alert('Os valores de "De" e "Até" devem estar dentre 0 e 10')
+        }
+    }
+
+    function filtrar() {
+        var sel = selAluno.value;
+        var filtro = inFiltro.value;
+        var vetor = [];
+        var frase = '';
+        var min = 0;
+        var max = 0;
+        var media = 0;
+        divMsg2.innerHTML = '';
+
+        if (sel == 1) {
+
+            for (var i = 0; i < lista.length; i++) {
+                if (filtro == lista[i].nome) {
+                    var nome2 = lista[i].nome;
+                    var nota2 = lista[i].nota;
+                    vetor.push(
+                        {nome: nome2,
+                        nota: nota2}
+                    );
+                    frase += `O aluno ${lista[i].nome} ficou com a nota ${lista[i].nota} <br>`;
+                    media += nota2
+                }
+            }
+
+            for (var i2 = 0, min = vetor[i2].nota; i2 < vetor.length; i2++) {
+                if (vetor[i2].nota > max) {
+                    max = vetor[i2].nota;
+                }
+
+                if (vetor[i2].nota < min) {
+                    min = vetor[i2].nota;
+                }
+            }   
+
+        } else if (sel == 2) {
+
+            for (var i = 0; i < lista.length; i++) {
+                if (filtro <= lista[i].nota) {
+                    var nome2 = lista[i].nome;
+                    var nota2 = lista[i].nota;
+                    vetor.push(
+                        {nome: nome2,
+                        nota: nota2}
+                    );
+                    frase += `O aluno ${lista[i].nome} ficou com a nota ${lista[i].nota} <br>`;
+                    media += nota2
+                }
+            }
+
+            for (var i2 = 0, min = vetor[i2].nota; i2 < vetor.length; i2++) {
+                if (vetor[i2].nota > max) {
+                    max = vetor[i2].nota;
+                }
+
+                if (vetor[i2].nota < min) {
+                    min = vetor[i2].nota;
+                }
+            } 
+
+        } else if (sel == 3) {
+
+            for (var i = 0; i < lista.length; i++) {
+                if (filtro >= lista[i].nota) {
+                    var nome2 = lista[i].nome;
+                    var nota2 = lista[i].nota;
+                    vetor.push(
+                        {nome: nome2,
+                        nota: nota2}
+                    );
+                    frase += `O aluno ${lista[i].nome} ficou com a nota ${lista[i].nota} <br>`;
+                    media += nota2
+                }
+            }
+
+            for (var i2 = 0, min = vetor[i2].nota; i2 < vetor.length; i2++) {
+                if (vetor[i2].nota > max) {
+                    max = vetor[i2].nota;
+                }
+
+                if (vetor[i2].nota < min) {
+                    min = vetor[i2].nota;
+                }
+            } 
+
+        }
+
+        divMsg2.innerHTML = `<br> Total de alunos registrados: ${lista.length} <br><br>
+        Total de alunos listado: ${vetor.length} (com nota no intervalo informado) <br><br>
+        ${frase} <br><br>
+        Maior Nota = ${max} <br>
+
+        Menor Nota = ${min} <br>
+
+        Média da Nota = ${media/vetor.length}
+        `
     }
 
 </script>
