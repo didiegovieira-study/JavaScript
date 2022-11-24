@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova 24/11</title>
+</head>
+<body>
+    
+    Pontos Jogador: <b id="bJogador">0</b> <br>
+    Pontos Adversário: <b id="bAdversario">0</b> <br><br>
+    <h1><b>Baralho Restante do Jogador:</b></h1>
+    <div id="divCartasJogador">
+        
+    </div>
+    <h1><b>Baralho Restante do Adversário:</b></h1>
+    <div id="divCartasAdversario">
+
+    </div>
+    <button onclick="simular()">Simular Batalha</button> <br><br>
+    <div id="divMsg">
+
+    </div>
+
+    <img src="" alt="" style="width: 200px;">
+
+</body>
+</html>
+
+<script>
+
+    var heroi = [
+        {imagem: 'cartas/capitao_america.png', poder: 3, resistencia: 3},
+        {imagem: 'cartas/deadpool.png', poder: 1, resistencia: 1},
+        {imagem: 'cartas/homem_de_ferro.png', poder: 5, resistencia: 0},
+        {imagem: 'cartas/mercurio.png', poder: 1, resistencia: 2},
+        {imagem: 'cartas/mulher_invisivel.png', poder: 2, resistencia: 2},
+        {imagem: 'cartas/sr_fantastico.png', poder: 3, resistencia: 2},
+        {imagem: 'cartas/thor.png', poder: 3, resistencia: 4},
+        {imagem: 'cartas/venom.png', poder: 3, resistencia: 1},
+        {imagem: 'cartas/viuva_negra.png', poder: 2, resistencia: 1},
+        {imagem: 'cartas/wolverine.png', poder: 2, resistencia: 3},
+    ];
+
+    var jogador = [];
+    var cont = 0;
+
+    for(var j = 0; j < 5; j++) {
+        var random = Number(1+ Math.random() * 10).toFixed(0);
+        cont = random-1;
+        
+        if (jogador.indexOf(heroi[cont]) < 0) {
+            jogador.push({imagem: heroi[cont].imagem, poder: heroi[cont].poder, resistencia: heroi[cont].resistencia});
+        }
+        
+    };
+
+    for(var j2 = 0; j2 < jogador.length; j2++) {
+        divCartasJogador.innerHTML += `<img src="${jogador[j2].imagem}" alt="" style="width: 200px;">`
+    };
+
+    var adversario = [];
+    var cont = 0;
+
+    for(var adv = 0; adv < 5; adv++) {
+        var random = Number(1+ Math.random() * 10).toFixed(0);
+        cont = random-1;
+
+    
+            adversario.push({imagem: heroi[cont].imagem, poder: heroi[cont].poder, resistencia: heroi[cont].resistencia});
+        
+    };
+
+    for(var adv = 0; adv < adversario.length; adv++) {
+        divCartasAdversario.innerHTML += `<img src="${adversario[adv].imagem}" alt="" style="width: 200px;">`
+    };
+
+    var jSimulado = [];
+    var advSimulado = [];
+
+    function simular() {
+        var jCarta = Number(1+ Math.random() * 5).toFixed(0);
+        var advCarta = Number(1+ Math.random() * 5).toFixed(0);
+
+        divMsg.innerHTML = `<img src="${jogador[jCarta].imagem}" alt="" style="width: 200px;"> <img src="${adversario[advCarta].imagem}" alt="" style="width: 200px;">`
+
+        for (var i = 0; i < 5; i++) {
+            if (jogador[i] != jCarta) {
+                jSimulado.push({imagem: heroi[i].imagem, poder: heroi[i].poder, resistencia: heroi[i].resistencia});
+            }
+        }
+
+        for (var i = 0; i < 5; i++) {
+            if (adversario[i] != advCarta) {
+                advSimulado.push({imagem: heroi[i].imagem, poder: heroi[i].poder, resistencia: heroi[i].resistencia});
+            }
+        }
+
+
+    };
+
+    
+
+</script>

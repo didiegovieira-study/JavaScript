@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prova</title>
+</head>
+<body>
+    
+    Pontos Jogador: <b id="bJogador">0</b> <br>
+    Pontos Adversario: <b id="bAdversario">0</b> <br><br>
+    <button onclick="simular()">Simular Batalha</button> <br>
+    <div id="divImg"></div> <br>
+    <div id="divVencedor">
+    </div> <br>
+    <div id="divBaralho"></div>
+
+</body>
+</html>
+
+<script>
+
+    var heroi = [
+        {imagem: 'cartas/capitao_america.png', poder: 3, resistencia: 3},
+        {imagem: 'cartas/deadpool.png', poder: 1, resistencia: 1},
+        {imagem: 'cartas/homem_de_ferro.png', poder: 5, resistencia: 0},
+        {imagem: 'cartas/mercurio.png', poder: 1, resistencia: 2},
+        {imagem: 'cartas/mulher_invisivel.png', poder: 2, resistencia: 2},
+        {imagem: 'cartas/sr_fantastico.png', poder: 3, resistencia: 2},
+        {imagem: 'cartas/thor.png', poder: 3, resistencia: 4},
+        {imagem: 'cartas/venom.png', poder: 3, resistencia: 1},
+        {imagem: 'cartas/viuva_negra.png', poder: 2, resistencia: 1},
+        {imagem: 'cartas/wolverine.png', poder: 2, resistencia: 3},
+    ];
+    
+    var contJ = 0;
+    var contAdv = 0;
+
+    function simular() {
+        divBaralho.innerHTML = ''
+        divImg.innerHTML = ''
+        divVencedor.innerHTML = ''
+
+        var jogador = Number(1+ Math.random() * 10).toFixed(0);
+        var adversario = Number(1+ Math.random() * 10).toFixed(0);
+
+        if (jogador == adversario) {
+            var adversario = Number(1+ Math.random() * 10).toFixed(0);
+        } else {
+            divImg.innerHTML = `<img src="${heroi[jogador].imagem}" alt="" style="width: 200px;"> VS <img src="${heroi[adversario].imagem}" alt="" style="width: 200px;">`
+    
+            var adversarioRes = heroi[adversario].resistencia - heroi[jogador].poder;
+            var jogadorRes = heroi[jogador].resistencia - heroi[adversario].poder ;
+    
+            if (jogadorRes == adversarioRes) {
+
+                divVencedor.innerHTML = `<p style="color: blue;">A partida empatou</p>`
+                contJ ++
+                contAdv ++
+                bJogador.innerHTML = `${contJ}`
+                bAdversario.innerHTML = `${contAdv}`
+    
+            } else if (jogadorRes > adversarioRes) {
+
+                divVencedor.innerHTML = `<p style="color: green;">O jogador venceu</p>`
+                contJ += 3
+                bJogador.innerHTML = `${contJ}`
+
+            } else {
+
+                divVencedor.innerHTML = `<p style="color: red;">O adversario venceu</p>`
+                contAdv += 3
+                bAdversario.innerHTML = `${contAdv}`
+
+            }
+    
+            for (var i = 0; i < heroi.length; i++) {
+                if (i != jogador && i != adversario) {
+                    divBaralho.innerHTML += `<img src="${heroi[i].imagem}" alt="" style="width: 100px;">`
+                }
+            }
+
+        }
+    }
+
+</script>
