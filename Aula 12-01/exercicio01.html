@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio</title>
+</head>
+<body>
+    
+    Codigo Produto: <input placeholder="Insira o codigo do produto" id="inCodigo"> <br>
+    Nome Produto: <input placeholder="Insira o nome do produto" id="inNome"> <br>
+    Quantidade Produto: <input placeholder="Insira a quantidade em estoque" id="inQuantidade"> <br>
+    <button onclick="salvar()">Salvar Produto</button>
+    <button onclick="estoque()">Ver Estoque</button> <br><br>
+    <div id="divMsg"></div>
+
+</body>
+</html>
+
+<script>
+
+    var produtos = []
+    var repetidos = []
+
+    function salvar() {
+        var cod = Number(inCodigo.value);
+        var nome = inNome.value;
+        var quant = Number(inQuantidade.value);
+
+        if (cod == '') {
+            alert('Código inválido para o produto')
+
+        } else if (nome == '') {
+            alert('Nome inválido para o produto')
+
+        } else if (quant <= 0) {
+            alert('Quantidade invalida para o produto')
+
+        } else {
+
+            var validacao = false
+            for (var i = 0; i < produtos.length; i++) {
+                if (produtos[i].cod == cod) {
+                    produtos[i].quant += quant
+
+                    alert(`O produto de código ${cod} teve sua quantidade aumentada`)
+                    validacao = true
+                }
+            }
+
+            if(!validacao){
+                produtos.push(
+                    {cod, nome, quant}
+                    )
+                alert(`Produto cadastrado com sucesso`)
+            }
+        }
+    }
+
+    function estoque() {
+        divMsg.innerHTML = ''
+
+        for (var i = 0; i < produtos.length; i++) {
+            divMsg.innerHTML += `Código: ${produtos[i].cod} <br>
+            Nome: ${produtos[i].nome} <br>
+            Quantidade: ${produtos[i].quant} <br><br>`
+            
+        }
+
+    }
+
+</script>
