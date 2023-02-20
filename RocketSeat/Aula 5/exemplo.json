@@ -1,0 +1,22 @@
+{
+    "nome": "Diego Marques",
+    "cidade": "Sao Paulo",
+    "telefone": 972981912,
+    "anime favorito": [
+        "jujutsu kaisen",
+        "berserk",
+        "chainsaw man"
+    ],
+    "hobbies": {
+        "semana": "jogar",
+        "fim_de_semana": {
+            "sabado": "cinema",
+            "domingo": "parque",
+            "outros": [
+                "caminhada",
+                "volei",
+                "netflix"
+            ]
+        }
+    }
+}
