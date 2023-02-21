@@ -1,2 +1,2 @@
 # Algoritmos
-Conteúdo das aulas de algoritmos, html e javascript
+The javascript was done by the <script> tag below the html
